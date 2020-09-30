@@ -10,12 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="48053cbd-baaf-42e0-bc65-902e0db653be" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../destini-challenge-starting" beforeDir="false" afterPath="$PROJECT_DIR$/../destini-challenge-starting" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../dicee-flutter" beforeDir="false" afterPath="$PROJECT_DIR$/../dicee-flutter" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../magic-8-ball-flutter" beforeDir="false" afterPath="$PROJECT_DIR$/../magic-8-ball-flutter" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mi_card_flutter" beforeDir="false" afterPath="$PROJECT_DIR$/../mi_card_flutter" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../quizzler-flutter" beforeDir="false" afterPath="$PROJECT_DIR$/../quizzler-flutter" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../xylophone-flutter" beforeDir="false" afterPath="$PROJECT_DIR$/../xylophone-flutter" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -152,7 +147,14 @@
       <option name="project" value="LOCAL" />
       <updated>1601443757832</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="categories added">
+      <created>1601445790619</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1601445790619</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -172,10 +174,10 @@
       <screen x="0" y="0" width="1366" height="732" />
     </state>
     <state x="270" y="125" key="AndroidCreateResourceFileDialog/0.0.1366.732@0.0.1366.732" timestamp="1601227684409" />
-    <state x="322" y="0" key="CommitChangelistDialog2" timestamp="1601443757193">
+    <state x="322" y="0" key="CommitChangelistDialog2" timestamp="1601445977947">
       <screen x="0" y="0" width="1366" height="732" />
     </state>
-    <state x="322" y="0" key="CommitChangelistDialog2/0.0.1366.732@0.0.1366.732" timestamp="1601443757193" />
+    <state x="322" y="0" key="CommitChangelistDialog2/0.0.1366.732@0.0.1366.732" timestamp="1601445977947" />
     <state x="470" y="125" key="FileChooserDialogImpl" timestamp="1601442601543">
       <screen x="0" y="0" width="1366" height="732" />
     </state>
@@ -208,10 +210,10 @@
       <screen x="0" y="0" width="1366" height="732" />
     </state>
     <state x="183" y="2" key="SettingsEditor/0.0.1366.732@0.0.1366.732" timestamp="1601442563849" />
-    <state x="282" y="103" key="Vcs.Push.Dialog.v2" timestamp="1601443409440">
+    <state x="282" y="103" key="Vcs.Push.Dialog.v2" timestamp="1601445873301">
       <screen x="0" y="0" width="1366" height="732" />
     </state>
-    <state x="282" y="103" key="Vcs.Push.Dialog.v2/0.0.1366.732@0.0.1366.732" timestamp="1601443409440" />
+    <state x="282" y="103" key="Vcs.Push.Dialog.v2/0.0.1366.732@0.0.1366.732" timestamp="1601445873301" />
     <state x="362" y="193" key="com.intellij.ide.util.TipDialog" timestamp="1601445313133">
       <screen x="0" y="0" width="1366" height="732" />
     </state>
