@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_centerInParent="true"
     tools:context=".categories">
 
     <TextView
@@ -50,19 +51,31 @@
                 android:id="@+id/books"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:background="#ACA9A9"
+                android:clickable="true"
+                android:translationZ="5dp"
+                app:cardBackgroundColor="#00000000"
                 app:cardCornerRadius="30dp"
-                app:cardElevation="2dp"
                 app:cardPreventCornerOverlap="true"
                 app:cardUseCompatPadding="true">
 
-                <ImageView
+                <ImageButton
                     android:id="@+id/booksimg"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:adjustViewBounds="true"
+                    android:background="#00000000"
+                    android:backgroundTint="#000B0A0A"
                     android:clickable="true"
                     android:cropToPadding="true"
-                    app:srcCompat="@drawable/booksimg" />
+                    android:outlineProvider="none"
+                    android:overScrollMode="ifContentScrolls"
+                    android:scaleType="fitStart"
+                    android:textAlignment="viewStart"
+                    android:visibility="visible"
+                    app:srcCompat="@drawable/booksimg"
+                    tools:visibility="visible" />
 
             </androidx.cardview.widget.CardView>
 
@@ -70,17 +83,29 @@
                 android:id="@+id/clothes"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:background="#ACA9A9"
+                android:clickable="true"
+                android:translationZ="5dp"
+                app:cardBackgroundColor="#00000000"
                 app:cardCornerRadius="30dp"
-                app:cardElevation="2dp"
                 app:cardUseCompatPadding="true">
 
-                <ImageView
+                <ImageButton
                     android:id="@+id/clothesimg"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:adjustViewBounds="true"
-                    android:cropToPadding="true"
-                    app:srcCompat="@drawable/clothes" />
+                    android:background="#00FFFFFF"
+                    android:backgroundTint="#000B0A0A"
+                    android:elevation="2dp"
+                    android:outlineProvider="none"
+                    android:overScrollMode="ifContentScrolls"
+                    android:scaleType="fitStart"
+                    android:textAlignment="viewStart"
+                    android:visibility="visible"
+                    app:srcCompat="@drawable/clothes"
+                    tools:visibility="visible" />
 
             </androidx.cardview.widget.CardView>
 
@@ -88,17 +113,29 @@
                 android:id="@+id/furniture"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:background="#ACA9A9"
+                android:clickable="true"
+                android:translationZ="5dp"
+                app:cardBackgroundColor="#00000000"
                 app:cardCornerRadius="30dp"
-                app:cardElevation="2dp"
                 app:cardUseCompatPadding="true">
 
-                <ImageView
+                <ImageButton
                     android:id="@+id/furnitureimg"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:adjustViewBounds="true"
-                    android:cropToPadding="true"
-                    app:srcCompat="@drawable/furniture" />
+                    android:background="#00FFFFFF"
+                    android:backgroundTint="#000B0A0A"
+                    android:elevation="2dp"
+                    android:outlineProvider="none"
+                    android:overScrollMode="ifContentScrolls"
+                    android:scaleType="fitStart"
+                    android:textAlignment="viewStart"
+                    android:visibility="visible"
+                    app:srcCompat="@drawable/furniture"
+                    tools:visibility="visible" />
 
             </androidx.cardview.widget.CardView>
 
@@ -106,17 +143,29 @@
                 android:id="@+id/electronics"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:background="#ACA9A9"
+                android:clickable="true"
+                android:translationZ="5dp"
+                app:cardBackgroundColor="#00000000"
                 app:cardCornerRadius="30dp"
-                app:cardElevation="2dp"
                 app:cardUseCompatPadding="true">
 
-                <ImageView
+                <ImageButton
                     android:id="@+id/electronicsimg"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:adjustViewBounds="true"
-                    android:cropToPadding="true"
-                    app:srcCompat="@drawable/electronics" />
+                    android:background="#00FFFFFF"
+                    android:backgroundTint="#000B0A0A"
+                    android:elevation="2dp"
+                    android:outlineProvider="none"
+                    android:overScrollMode="ifContentScrolls"
+                    android:scaleType="fitStart"
+                    android:textAlignment="viewStart"
+                    android:visibility="visible"
+                    app:srcCompat="@drawable/electronics"
+                    tools:visibility="visible" />
 
             </androidx.cardview.widget.CardView>
 
@@ -124,17 +173,29 @@
                 android:id="@+id/grains"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:background="#ACA9A9"
+                android:clickable="true"
+                android:translationZ="5dp"
+                app:cardBackgroundColor="#00000000"
                 app:cardCornerRadius="30dp"
-                app:cardElevation="2dp"
                 app:cardUseCompatPadding="true">
 
-                <ImageView
+                <ImageButton
                     android:id="@+id/grainsimg"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:adjustViewBounds="true"
-                    android:cropToPadding="true"
-                    app:srcCompat="@drawable/grains" />
+                    android:background="#00FFFFFF"
+                    android:backgroundTint="#000B0A0A"
+                    android:elevation="2dp"
+                    android:outlineProvider="none"
+                    android:overScrollMode="ifContentScrolls"
+                    android:scaleType="fitStart"
+                    android:textAlignment="viewStart"
+                    android:visibility="visible"
+                    app:srcCompat="@drawable/grains"
+                    tools:visibility="visible" />
 
             </androidx.cardview.widget.CardView>
 
@@ -142,17 +203,29 @@
                 android:id="@+id/stationary"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:background="#ACA9A9"
+                android:clickable="true"
+                android:translationZ="5dp"
+                app:cardBackgroundColor="#00000000"
                 app:cardCornerRadius="30dp"
-                app:cardElevation="2dp"
                 app:cardUseCompatPadding="true">
 
-                <ImageView
+                <ImageButton
                     android:id="@+id/stationaryimg"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:adjustViewBounds="true"
-                    android:cropToPadding="true"
-                    app:srcCompat="@drawable/stationary" />
+                    android:background="#00FFFFFF"
+                    android:backgroundTint="#000B0A0A"
+                    android:elevation="2dp"
+                    android:outlineProvider="none"
+                    android:overScrollMode="ifContentScrolls"
+                    android:scaleType="fitStart"
+                    android:textAlignment="viewStart"
+                    android:visibility="visible"
+                    app:srcCompat="@drawable/stationary"
+                    tools:visibility="visible" />
 
             </androidx.cardview.widget.CardView>
 
@@ -160,17 +233,29 @@
                 android:id="@+id/utensils"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:background="#ACA9A9"
+                android:clickable="true"
+                android:translationZ="5dp"
+                app:cardBackgroundColor="#00000000"
                 app:cardCornerRadius="30dp"
-                app:cardElevation="2dp"
                 app:cardUseCompatPadding="true">
 
-                <ImageView
+                <ImageButton
                     android:id="@+id/utensilsimg"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:adjustViewBounds="true"
-                    android:cropToPadding="true"
-                    app:srcCompat="@drawable/utensils" />
+                    android:background="#00FFFFFF"
+                    android:backgroundTint="#000B0A0A"
+                    android:elevation="2dp"
+                    android:outlineProvider="none"
+                    android:overScrollMode="ifContentScrolls"
+                    android:scaleType="fitStart"
+                    android:textAlignment="viewStart"
+                    android:visibility="visible"
+                    app:srcCompat="@drawable/utensils"
+                    tools:visibility="visible" />
 
             </androidx.cardview.widget.CardView>
 
@@ -178,17 +263,29 @@
                 android:id="@+id/finance"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:background="#ACA9A9"
+                android:clickable="true"
+                android:translationZ="5dp"
+                app:cardBackgroundColor="#00000000"
                 app:cardCornerRadius="30dp"
-                app:cardElevation="2dp"
                 app:cardUseCompatPadding="true">
 
-                <ImageView
+                <ImageButton
                     android:id="@+id/financeimg"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:adjustViewBounds="true"
-                    android:cropToPadding="true"
-                    app:srcCompat="@drawable/finance" />
+                    android:background="#00FFFFFF"
+                    android:backgroundTint="#000B0A0A"
+                    android:elevation="2dp"
+                    android:outlineProvider="none"
+                    android:overScrollMode="ifContentScrolls"
+                    android:scaleType="fitStart"
+                    android:textAlignment="viewStart"
+                    android:visibility="visible"
+                    app:srcCompat="@drawable/finance"
+                    tools:visibility="visible" />
 
             </androidx.cardview.widget.CardView>
 

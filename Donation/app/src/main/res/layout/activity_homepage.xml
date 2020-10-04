@@ -4,12 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FDF2DD"
     android:clickable="true"
+    android:focusable="true"
     android:longClickable="true"
     android:soundEffectsEnabled="true"
     android:touchscreenBlocksFocus="true"
-    tools:context=".homepage"
-    android:focusable="true">
+    tools:context=".homepage">
 
     <ImageView
         android:id="@+id/imageView2"
@@ -31,6 +32,7 @@
         android:layout_marginTop="212dp"
         android:animateLayoutChanges="true"
         android:background="#FFFFFF"
+        android:backgroundTint="#FAE4C4"
         android:clickable="false"
         android:elevation="2dp"
         android:fadeScrollbars="true"
@@ -46,67 +48,57 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:targetApi="lollipop">
 
-        <ScrollView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="100dp"
-            android:elevation="50dp">
+            android:elevation="0dp"
+            android:orientation="vertical">
 
-            <LinearLayout
+            <TextView
+                android:id="@+id/aroundtheworld"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:elevation="0dp"
-                android:orientation="vertical">
+                android:layout_height="132dp"
+                android:elevation="5dp"
+                android:ellipsize="none"
+                android:focusable="auto"
+                android:fontFamily="sans-serif-black"
+                android:foregroundGravity="center_vertical"
+                android:freezesText="false"
+                android:gravity="clip_horizontal|center|clip_vertical|center_horizontal|center_vertical"
+                android:selectAllOnFocus="false"
+                android:shadowColor="#E6FCBF49"
+                android:shadowRadius="5"
+                android:text="Around The World"
+                android:textColor="#FCBF49"
+                android:textColorLink="#FCBF49"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                android:visibility="visible" />
 
-                <ImageView
-                    android:id="@+id/news1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/give" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
 
-                <ImageView
-                    android:id="@+id/news2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/donatedontdump" />
+        </LinearLayout>
 
-                <ImageView
-                    android:id="@+id/news3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/kid3" />
-
-                <ImageView
-                    android:id="@+id/news4"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/kid4" />
-
-                <ImageView
-                    android:id="@+id/news5"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/kid2" />
-            </LinearLayout>
-        </ScrollView>
     </androidx.cardview.widget.CardView>
 
-    <ImageButton
-        android:id="@+id/categories"
-        style="@style/Widget.AppCompat.ImageButton"
+    <Button
+        android:id="@+id/categoriesbtn"
         android:layout_width="100dp"
         android:layout_height="65dp"
         android:adjustViewBounds="true"
-        android:background="#C31B233A"
-
+        android:background="#c31b233a"
         android:clickable="true"
         android:cropToPadding="true"
         android:elevation="2dp"
         android:filterTouchesWhenObscured="true"
         android:fitsSystemWindows="true"
         android:focusable="true"
+        android:foreground="@drawable/categories"
         android:longClickable="true"
         android:scaleType="centerInside"
+        android:translationZ="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.327"
@@ -114,25 +106,27 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.3"
         tools:ignore="ContentDescription"
-        tools:src="@drawable/menu"
+        tools:src="@drawable/categories"
         tools:targetApi="lollipop" />
 
-    <ImageButton
-        android:id="@+id/donate"
+    <Button
+        android:id="@+id/donatebtn"
         android:layout_width="100dp"
         android:layout_height="65dp"
-        android:background="#C31B233A"
-        android:padding="2dp"
+        android:background="#c31b233a"
         android:elevation="2dp"
+        android:foreground="@drawable/donateicon"
+        android:padding="2dp"
         android:scaleType="centerInside"
+        android:translationZ="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/categories"
+        app:layout_constraintStart_toEndOf="@+id/categoriesbtn"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.3"
         tools:ignore="ContentDescription"
-        tools:src="@drawable/donation"
+        tools:src="@drawable/donateicon"
         tools:targetApi="lollipop" />
 
 

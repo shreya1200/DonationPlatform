@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".register">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#C31B233A"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/welcometext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/amaranth"
+            android:text="Welcome"
+            android:textColor="#ffa200"
+            android:textSize="36sp"
+            android:textStyle="bold"
+            android:translationX="20dp"
+            android:translationY="30dp" />
+
+        <TextView
+            android:id="@+id/helptext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/amaranth"
+            android:text="Help us create a better world"
+            android:textColor="#ffffffff"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:translationX="25dp"
+            android:translationY="30dp" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center_horizontal"
+            android:backgroundTint="#FBDA9E"
+            android:clipToPadding="true"
+            android:elevation="5dp"
+            android:outlineProvider="background"
+            android:translationY="90dp"
+            android:translationZ="10dp"
+            app:cardBackgroundColor="#FBDA9E"
+            app:cardCornerRadius="50dp"
+            app:cardElevation="5dp"
+            app:cardPreventCornerOverlap="true"
+            app:cardUseCompatPadding="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/profilecard"
+                    android:layout_width="130dp"
+                    android:layout_height="130dp"
+                    app:cardCornerRadius="40dp">
+
+                    <ImageView
+                        android:id="@+id/profileimg"
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
+                        android:layout_gravity="center|fill_horizontal|fill_vertical"
+                        android:adjustViewBounds="true"
+                        android:cropToPadding="false"
+                        tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
+                    <Button
+                        android:id="@+id/uploadphoto"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom|center"
+                        android:background="#20FFFFFF"
+                        android:text="Photo" />
+
+                </androidx.cardview.widget.CardView>
+
+                <EditText
+                    android:id="@+id/Name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="start"
+                    android:ems="13"
+                    android:hint="Name"
+                    android:inputType="textPersonName" />
+
+                <EditText
+                    android:id="@+id/number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="start"
+                    android:ems="13"
+                    android:gravity="left|center_vertical"
+                    android:hint="Contact Number"
+                    android:inputType="phone" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clipToPadding="true"
+                    android:gravity="center|top"
+                    android:orientation="horizontal"
+                    android:translationX="15dp">
+
+                    <Spinner
+                        android:id="@+id/state"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:entries="@array/states"
+                        android:spinnerMode="dropdown" />
+
+                    <Spinner
+                        android:id="@+id/city"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:entries="@array/cities"
+                        android:spinnerMode="dialog" />
+                </LinearLayout>
+
+                <EditText
+                    android:id="@+id/email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="start"
+                    android:ems="13"
+                    android:hint="Email-Id"
+                    android:inputType="textEmailAddress" />
+
+                <EditText
+                    android:id="@+id/password"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="start"
+                    android:ems="13"
+                    android:hint="Password"
+                    android:inputType="text" />
+
+                <EditText
+                    android:id="@+id/confirmpassword"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="start"
+                    android:ems="13"
+                    android:hint="Confirm Password"
+                    android:inputType="text" />
+
+                <Button
+                    android:id="@+id/registerbutton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="#FFFFFF"
+                    android:backgroundTint="#C61B233A"
+                    android:cursorVisible="true"
+                    android:elevation="5dp"
+                    android:ellipsize="start"
+                    android:ems="10"
+                    android:enabled="true"
+                    android:fontFamily="@font/amaranth"
+                    android:gravity="center"
+                    android:text="Register"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/textforlogin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|center_horizontal"
+                    android:text="Already a member ? Login here."
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
