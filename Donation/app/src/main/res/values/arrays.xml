@@ -43,6 +43,13 @@
 
     <string-array name="cities">
         <item>--City--</item>
+        <item>Pune</item>
+        <item>Mumbai</item>
+    </string-array>
+
+    <string-array name="uploadphoto">
+        <item>Upload Photo</item>
+        <item>Remove Photo</item>
     </string-array>
 </resources>
 

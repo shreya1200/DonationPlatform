@@ -5,6 +5,8 @@
       <config>
         <device id="pixel_xl" />
         <device id="pixel_3" />
+        <device id="pixel" />
+        <device id="pixel_3_xl" />
       </config>
     </shared>
   </component>
@@ -111,8 +113,11 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="resourceFile" />
         <option value="valueResourceFile" />
+        <option value="layoutResourceFile" />
+        <option value="Interface" />
+        <option value="Class" />
+        <option value="resourceFile" />
       </list>
     </option>
   </component>
@@ -136,7 +141,10 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="RZ8N818JKRD" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2020-10-07T08:05:06.199Z" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SelectDeploymentTargetsDialog.selectedDevices" value="23681895&#10;RZ8N818JKRD" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.17" />
@@ -148,13 +156,16 @@
     <option name="MODULE_TAB" value="Default Config" />
   </component>
   <component name="RecentsManager">
-    <key name="android.template.-997436136">
+    <key name="android.template.746731211">
+      <recent name="com.example.donation" />
+    </key>
+    <key name="android.template.-1655850708">
       <recent name="com.example.donation" />
     </key>
     <key name="android.template.-452870631">
       <recent name="com.example.donation" />
     </key>
-    <key name="android.template.-1655850708">
+    <key name="android.template.-997436136">
       <recent name="com.example.donation" />
     </key>
   </component>
@@ -251,26 +262,38 @@
       <screen x="0" y="0" width="1366" height="732" />
     </state>
     <state x="207" y="102" key="#PSD/0.0.1366.732@0.0.1366.732" timestamp="1601796651065" />
+    <state x="439" y="172" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1602053268260">
+      <screen x="0" y="0" width="1366" height="732" />
+    </state>
+    <state x="439" y="172" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.732@0.0.1366.732" timestamp="1602053268260" />
     <state x="433" y="204" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog" timestamp="1601441920000">
       <screen x="0" y="0" width="1366" height="732" />
     </state>
     <state x="433" y="204" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog/0.0.1366.732@0.0.1366.732" timestamp="1601441920000" />
-    <state x="495" y="79" key="#com.intellij.ide.util.MemberChooser" timestamp="1601726932963">
+    <state x="495" y="79" key="#com.intellij.ide.util.MemberChooser" timestamp="1602010119300">
       <screen x="0" y="0" width="1366" height="732" />
     </state>
-    <state x="495" y="79" key="#com.intellij.ide.util.MemberChooser/0.0.1366.732@0.0.1366.732" timestamp="1601726932963" />
+    <state x="495" y="79" key="#com.intellij.ide.util.MemberChooser/0.0.1366.732@0.0.1366.732" timestamp="1602010119300" />
+    <state x="420" y="116" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1601996509194">
+      <screen x="0" y="0" width="1366" height="732" />
+    </state>
+    <state x="420" y="116" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.732@0.0.1366.732" timestamp="1601996509194" />
     <state x="270" y="125" key="AndroidCreateResourceDirectoryDialog" timestamp="1601227701185">
       <screen x="0" y="0" width="1366" height="732" />
     </state>
     <state x="270" y="125" key="AndroidCreateResourceDirectoryDialog/0.0.1366.732@0.0.1366.732" timestamp="1601227701185" />
-    <state x="270" y="125" key="AndroidCreateResourceFileDialog" timestamp="1601722067685">
+    <state x="270" y="125" key="AndroidCreateResourceFileDialog" timestamp="1601994162202">
       <screen x="0" y="0" width="1366" height="732" />
     </state>
-    <state x="270" y="125" key="AndroidCreateResourceFileDialog/0.0.1366.732@0.0.1366.732" timestamp="1601722067685" />
+    <state x="270" y="125" key="AndroidCreateResourceFileDialog/0.0.1366.732@0.0.1366.732" timestamp="1601994162202" />
     <state x="542" y="182" key="AndroidCreateXmlResourceDialog" timestamp="1601829040496">
       <screen x="0" y="0" width="1366" height="732" />
     </state>
     <state x="542" y="182" key="AndroidCreateXmlResourceDialog/0.0.1366.732@0.0.1366.732" timestamp="1601829040496" />
+    <state x="545" y="134" key="AndroidProcessChooserDialog" timestamp="1602011897480">
+      <screen x="0" y="0" width="1366" height="732" />
+    </state>
+    <state x="545" y="134" key="AndroidProcessChooserDialog/0.0.1366.732@0.0.1366.732" timestamp="1602011897480" />
     <state x="322" y="0" key="CommitChangelistDialog2" timestamp="1601443757193">
       <screen x="0" y="0" width="1366" height="732" />
     </state>
@@ -279,34 +302,34 @@
       <screen x="0" y="0" width="1366" height="732" />
     </state>
     <state x="370" y="125" key="Downloadable.Font.Dialog.Size/0.0.1366.732@0.0.1366.732" timestamp="1601821734442" />
-    <state x="470" y="125" key="FileChooserDialogImpl" timestamp="1601797126552">
+    <state x="470" y="125" key="FileChooserDialogImpl" timestamp="1601996459786">
       <screen x="0" y="0" width="1366" height="732" />
     </state>
-    <state x="470" y="125" key="FileChooserDialogImpl/0.0.1366.732@0.0.1366.732" timestamp="1601797126552" />
-    <state width="1320" height="2" key="GridCell.Tab.0.bottom" timestamp="1601831113537">
+    <state x="470" y="125" key="FileChooserDialogImpl/0.0.1366.732@0.0.1366.732" timestamp="1601996459786" />
+    <state width="660" height="265" key="GridCell.Tab.0.bottom" timestamp="1601975422883">
       <screen x="0" y="0" width="1366" height="732" />
     </state>
-    <state width="1320" height="2" key="GridCell.Tab.0.bottom/0.0.1366.732@0.0.1366.732" timestamp="1601831113537" />
-    <state width="1320" height="2" key="GridCell.Tab.0.center" timestamp="1601831113536">
+    <state width="660" height="265" key="GridCell.Tab.0.bottom/0.0.1366.732@0.0.1366.732" timestamp="1601975422883" />
+    <state width="660" height="265" key="GridCell.Tab.0.center" timestamp="1601975422882">
       <screen x="0" y="0" width="1366" height="732" />
     </state>
-    <state width="1320" height="2" key="GridCell.Tab.0.center/0.0.1366.732@0.0.1366.732" timestamp="1601831113536" />
-    <state width="1320" height="2" key="GridCell.Tab.0.left" timestamp="1601831113535">
+    <state width="660" height="265" key="GridCell.Tab.0.center/0.0.1366.732@0.0.1366.732" timestamp="1601975422882" />
+    <state width="660" height="265" key="GridCell.Tab.0.left" timestamp="1601975422882">
       <screen x="0" y="0" width="1366" height="732" />
     </state>
-    <state width="1320" height="2" key="GridCell.Tab.0.left/0.0.1366.732@0.0.1366.732" timestamp="1601831113535" />
-    <state width="1320" height="2" key="GridCell.Tab.0.right" timestamp="1601831113536">
+    <state width="660" height="265" key="GridCell.Tab.0.left/0.0.1366.732@0.0.1366.732" timestamp="1601975422882" />
+    <state width="660" height="265" key="GridCell.Tab.0.right" timestamp="1601975422883">
       <screen x="0" y="0" width="1366" height="732" />
     </state>
-    <state width="1320" height="2" key="GridCell.Tab.0.right/0.0.1366.732@0.0.1366.732" timestamp="1601831113536" />
+    <state width="660" height="265" key="GridCell.Tab.0.right/0.0.1366.732@0.0.1366.732" timestamp="1601975422883" />
     <state x="324" y="66" key="NewModule_or_Project.wizard" timestamp="1601443050054">
       <screen x="0" y="0" width="1366" height="732" />
     </state>
     <state x="324" y="66" key="NewModule_or_Project.wizard/0.0.1366.732@0.0.1366.732" timestamp="1601443050054" />
-    <state x="497" y="72" key="RollbackChangesDialog" timestamp="1601444741656">
+    <state x="497" y="72" key="RollbackChangesDialog" timestamp="1601973053476">
       <screen x="0" y="0" width="1366" height="732" />
     </state>
-    <state x="497" y="72" key="RollbackChangesDialog/0.0.1366.732@0.0.1366.732" timestamp="1601444741656" />
+    <state x="497" y="72" key="RollbackChangesDialog/0.0.1366.732@0.0.1366.732" timestamp="1601973053476" />
     <state x="183" y="2" key="SettingsEditor" timestamp="1601708311422">
       <screen x="0" y="0" width="1366" height="732" />
     </state>
@@ -315,10 +338,14 @@
       <screen x="0" y="0" width="1366" height="732" />
     </state>
     <state x="282" y="103" key="Vcs.Push.Dialog.v2/0.0.1366.732@0.0.1366.732" timestamp="1601443409440" />
-    <state x="362" y="193" key="com.intellij.ide.util.TipDialog" timestamp="1601445313133">
+    <state x="99" y="98" width="1168" height="535" key="com.android.tools.idea.avdmanager.AvdListDialog" timestamp="1602016925878">
       <screen x="0" y="0" width="1366" height="732" />
     </state>
-    <state x="362" y="193" key="com.intellij.ide.util.TipDialog/0.0.1366.732@0.0.1366.732" timestamp="1601445313133" />
+    <state x="99" y="98" width="1168" height="535" key="com.android.tools.idea.avdmanager.AvdListDialog/0.0.1366.732@0.0.1366.732" timestamp="1602016925878" />
+    <state x="362" y="193" key="com.intellij.ide.util.TipDialog" timestamp="1601964025651">
+      <screen x="0" y="0" width="1366" height="732" />
+    </state>
+    <state x="362" y="193" key="com.intellij.ide.util.TipDialog/0.0.1366.732@0.0.1366.732" timestamp="1601964025651" />
     <state x="479" y="287" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1601443881524">
       <screen x="0" y="0" width="1366" height="732" />
     </state>

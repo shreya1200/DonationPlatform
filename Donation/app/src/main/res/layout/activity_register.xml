@@ -1,21 +1,23 @@
-<?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".register">
+    tools:context=".DonateProfileActivity">
 
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#C31B233A"
+        android:background="#212738"
+        android:gravity="center"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
 
         <TextView
             android:id="@+id/welcometext"
@@ -36,30 +38,31 @@
             android:fontFamily="@font/amaranth"
             android:text="Help us create a better world"
             android:textColor="#ffffffff"
-            android:textSize="16sp"
+            android:textSize="14sp"
             android:textStyle="bold"
             android:translationX="25dp"
             android:translationY="30dp" />
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom|center_horizontal"
-            android:backgroundTint="#FBDA9E"
+            android:layout_height="500dp"
+            android:layout_gravity="center|center_horizontal"
+            android:backgroundTint="#FCBF49"
             android:clipToPadding="true"
             android:elevation="5dp"
-            android:outlineProvider="background"
-            android:translationY="90dp"
+            android:outlineProvider="none"
+            android:translationY="10dp"
             android:translationZ="10dp"
-            app:cardBackgroundColor="#FBDA9E"
+            app:cardBackgroundColor="#FCBF49"
             app:cardCornerRadius="50dp"
-            app:cardElevation="5dp"
+            app:cardElevation="10dp"
             app:cardPreventCornerOverlap="true"
             app:cardUseCompatPadding="true">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_gravity="center"
                 android:gravity="center"
                 android:orientation="vertical">
 
@@ -67,6 +70,7 @@
                     android:id="@+id/profilecard"
                     android:layout_width="130dp"
                     android:layout_height="130dp"
+                    android:layout_gravity="center"
                     app:cardCornerRadius="40dp">
 
                     <ImageView
@@ -76,6 +80,7 @@
                         android:layout_gravity="center|fill_horizontal|fill_vertical"
                         android:adjustViewBounds="true"
                         android:cropToPadding="false"
+                        android:scaleType="centerCrop"
                         tools:srcCompat="@tools:sample/backgrounds/scenic" />
 
                     <Button
@@ -92,10 +97,14 @@
                     android:id="@+id/Name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
                     android:ellipsize="start"
                     android:ems="13"
                     android:hint="Name"
-                    android:inputType="textPersonName" />
+                    android:inputType="textPersonName"
+                    android:textColor="#F44336"
+                    android:textColorHint="#FF5722"
+                    android:textSize="14sp" />
 
                 <EditText
                     android:id="@+id/number"
@@ -105,30 +114,34 @@
                     android:ems="13"
                     android:gravity="left|center_vertical"
                     android:hint="Contact Number"
-                    android:inputType="phone" />
+                    android:inputType="phone"
+                    android:textColor="#F44336"
+                    android:textColorHint="#FF5722"
+                    android:textSize="14sp" />
 
-                <LinearLayout
+                <TableRow
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:clipToPadding="true"
-                    android:gravity="center|top"
-                    android:orientation="horizontal"
-                    android:translationX="15dp">
+                    android:layout_height="wrap_content">
 
                     <Spinner
                         android:id="@+id/state"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="30dp"
+                        android:background="#FCBF49"
                         android:entries="@array/states"
-                        android:spinnerMode="dropdown" />
+                        android:foregroundTint="#F44336"
+                        android:gravity="center"
+                        android:spinnerMode="dropdown"
+                        android:translationX="-10dp" />
 
                     <Spinner
                         android:id="@+id/city"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="30dp"
                         android:entries="@array/cities"
+                        android:gravity="center"
                         android:spinnerMode="dialog" />
-                </LinearLayout>
+                </TableRow>
 
                 <EditText
                     android:id="@+id/email"
@@ -137,7 +150,10 @@
                     android:ellipsize="start"
                     android:ems="13"
                     android:hint="Email-Id"
-                    android:inputType="textEmailAddress" />
+                    android:inputType="textEmailAddress"
+                    android:textColor="#F44336"
+                    android:textColorHint="#FF5722"
+                    android:textSize="14sp" />
 
                 <EditText
                     android:id="@+id/password"
@@ -146,7 +162,10 @@
                     android:ellipsize="start"
                     android:ems="13"
                     android:hint="Password"
-                    android:inputType="text" />
+                    android:inputType="text"
+                    android:textColor="#F44336"
+                    android:textColorHint="#FF5722"
+                    android:textSize="14sp" />
 
                 <EditText
                     android:id="@+id/confirmpassword"
@@ -155,37 +174,47 @@
                     android:ellipsize="start"
                     android:ems="13"
                     android:hint="Confirm Password"
-                    android:inputType="text" />
-
-                <Button
-                    android:id="@+id/registerbutton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="#FFFFFF"
-                    android:backgroundTint="#C61B233A"
-                    android:cursorVisible="true"
-                    android:elevation="5dp"
-                    android:ellipsize="start"
-                    android:ems="10"
-                    android:enabled="true"
-                    android:fontFamily="@font/amaranth"
-                    android:gravity="center"
-                    android:text="Register"
-                    android:textColor="#FFFFFF"
-                    android:textSize="16sp" />
-
-                <TextView
-                    android:id="@+id/textforlogin"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center|center_horizontal"
-                    android:text="Already a member ? Login here."
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
+                    android:inputType="text"
+                    android:textColor="#F44336"
+                    android:textColorHint="#FF5722"
+                    android:textSize="14sp" />
 
             </LinearLayout>
 
         </androidx.cardview.widget.CardView>
+
+        <Button
+            android:id="@+id/registerbutton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/buttondrawable"
+            android:backgroundTint="#FFFFFF"
+            android:cursorVisible="true"
+            android:elevation="5dp"
+            android:ellipsize="start"
+            android:ems="10"
+            android:enabled="true"
+            android:fontFamily="sans-serif"
+            android:gravity="center|center_horizontal"
+            android:text="Register"
+            android:textColor="#FF5722"
+            android:textColorHint="#FF5722"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textforlogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|center_horizontal"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="30dp"
+            android:clickable="true"
+            android:fontFamily="@font/amaranth"
+            android:text="Already a member? Login here."
+            android:textColor="#ffffff"
+            android:textSize="12sp"
+            android:textStyle="bold" />
 
     </LinearLayout>
 
