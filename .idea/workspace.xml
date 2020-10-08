@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a6381707-6a76-4352-8426-c03c8efc014e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -21,6 +22,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Donation" />
     <property name="settings.editor.selected.configurable" value="debugger.stepping" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
@@ -42,5 +44,9 @@
       <screen x="0" y="0" width="1366" height="732" />
     </state>
     <state x="146" y="25" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.732@0.0.1366.732" timestamp="1601446742327" />
+    <state x="421" y="130" key="FileChooserDialogImpl" timestamp="1602092938755">
+      <screen x="0" y="31" width="1280" height="689" />
+    </state>
+    <state x="421" y="130" key="FileChooserDialogImpl/0.31.1280.689@0.31.1280.689" timestamp="1602092938755" />
   </component>
 </project>

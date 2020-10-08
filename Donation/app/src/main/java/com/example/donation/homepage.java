@@ -12,16 +12,13 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.example.donation.Model.Articles;
 import com.example.donation.Model.Headlines;
-import com.example.donation.ui.login.login;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -53,7 +50,7 @@ public class homepage extends AppCompatActivity {
         donatebtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(homepage.this, login.class);
+                Intent intent = new Intent(homepage.this, LoginActivity.class);
                 startActivity(intent);
             }
         });

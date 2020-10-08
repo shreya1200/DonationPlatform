@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "217534964389",
+    "firebase_url": "https://donation-fac30.firebaseio.com",
+    "project_id": "donation-fac30",
+    "storage_bucket": "donation-fac30.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:217534964389:android:a7d8960e509dc2ab14a34c",
+        "android_client_info": {
+          "package_name": "com.example.donation"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "217534964389-19b68qr9h2j26evdlo7ckepvb95hupcr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCSJ3y8tyTtJ5LGmKZFl-Z9Jx4q-1Zvl4A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "217534964389-19b68qr9h2j26evdlo7ckepvb95hupcr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

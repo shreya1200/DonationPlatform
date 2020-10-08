@@ -94,7 +94,7 @@
                 </androidx.cardview.widget.CardView>
 
                 <EditText
-                    android:id="@+id/Name"
+                    android:id="@+id/name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
@@ -102,7 +102,7 @@
                     android:ems="13"
                     android:hint="Name"
                     android:inputType="textPersonName"
-                    android:textColor="#F44336"
+                    android:textColor="#000000"
                     android:textColorHint="#FF5722"
                     android:textSize="14sp" />
 
@@ -115,33 +115,13 @@
                     android:gravity="left|center_vertical"
                     android:hint="Contact Number"
                     android:inputType="phone"
-                    android:textColor="#F44336"
+                    android:textColor="#000000"
                     android:textColorHint="#FF5722"
                     android:textSize="14sp" />
 
                 <TableRow
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-
-                    <Spinner
-                        android:id="@+id/state"
-                        android:layout_width="wrap_content"
-                        android:layout_height="30dp"
-                        android:background="#FCBF49"
-                        android:entries="@array/states"
-                        android:foregroundTint="#F44336"
-                        android:gravity="center"
-                        android:spinnerMode="dropdown"
-                        android:translationX="-10dp" />
-
-                    <Spinner
-                        android:id="@+id/city"
-                        android:layout_width="wrap_content"
-                        android:layout_height="30dp"
-                        android:entries="@array/cities"
-                        android:gravity="center"
-                        android:spinnerMode="dialog" />
-                </TableRow>
+                    android:layout_height="wrap_content"/>
 
                 <EditText
                     android:id="@+id/email"
@@ -151,7 +131,7 @@
                     android:ems="13"
                     android:hint="Email-Id"
                     android:inputType="textEmailAddress"
-                    android:textColor="#F44336"
+                    android:textColor="#000000"
                     android:textColorHint="#FF5722"
                     android:textSize="14sp" />
 
@@ -163,7 +143,7 @@
                     android:ems="13"
                     android:hint="Password"
                     android:inputType="text"
-                    android:textColor="#F44336"
+                    android:textColor="#000000"
                     android:textColorHint="#FF5722"
                     android:textSize="14sp" />
 
@@ -175,7 +155,7 @@
                     android:ems="13"
                     android:hint="Confirm Password"
                     android:inputType="text"
-                    android:textColor="#F44336"
+                    android:textColor="#000000"
                     android:textColorHint="#FF5722"
                     android:textSize="14sp" />
 
