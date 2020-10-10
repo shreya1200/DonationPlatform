@@ -51,5 +51,16 @@
         <item>Upload Photo</item>
         <item>Remove Photo</item>
     </string-array>
+    <string-array name="categories">
+        <item>--Select Category--</item>
+        <item>Books</item>
+        <item>Clothes</item>
+        <item>Furniture</item>
+        <item>Electronics</item>
+        <item>Grains and Pulses</item>
+        <item>Stationary</item>
+        <item>Utensils</item>
+        <item>Financial Aid</item>
+    </string-array>
 </resources>
 

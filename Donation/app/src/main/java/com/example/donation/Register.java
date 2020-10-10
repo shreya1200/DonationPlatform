@@ -95,7 +95,7 @@ public class Register extends AppCompatActivity {
                                         @Override
                                         public void onSuccess(Void aVoid) {
                                             System.out.println("User added successfully");
-                                            startActivity(new Intent(Register.this,homepage.class));
+                                            startActivity(new Intent(Register.this,profile.class));
                                         }
                                     });
                                 } else {
