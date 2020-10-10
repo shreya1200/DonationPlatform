@@ -12,7 +12,7 @@
         android:layout_width="0dp"
         android:layout_height="37dp"
         android:shadowColor="#B2653A09"
-        android:text="Categories"
+        android:text="Donation Categories"
         android:textAlignment="center"
         android:textColor="#FFA200"
         android:textSize="24sp"

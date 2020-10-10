@@ -37,8 +37,8 @@ public class homepage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_homepage);
 
-        Button categoriesbtn =findViewById(R.id.categoriesbtn);
-        categoriesbtn.setOnClickListener(new View.OnClickListener() {
+        Button alldonationsbtn =findViewById(R.id.alldonationsbtn);
+        alldonationsbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(homepage.this,categories.class);
