@@ -84,6 +84,7 @@ public class Register extends AppCompatActivity {
                                         return;
                                     }
                                     Map<String,Object> user = new HashMap<>();
+                                    user.put("uid",fauth.getCurrentUser().getUid());
                                     user.put("name",name.getText().toString());
                                     user.put("email",email.getText().toString());
                                     user.put("number", number.getText().toString());
