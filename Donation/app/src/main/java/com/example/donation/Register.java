@@ -75,12 +75,14 @@ public class Register extends AppCompatActivity {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if (task.isSuccessful()) {
-                                    @SuppressLint("MissingPermission") Location location = loc.getLastKnownLocation(LocationManager.GPS_PROVIDER);
-                                    if(location != null){
+                                    @SuppressLint("MissingPermission") Location location = loc.getLastKnownLocation(LocationManager.PASSIVE_PROVIDER);
+                                    try{
                                         loc_lat = location.getLatitude();
                                         loc_long = location.getLongitude();
-                                    } else {
-                                        System.out.println("Error in accessing location.");
+                                    } catch(Exception e) {
+                                        FirebaseUser user = fauth.getCurrentUser();
+                                        user.delete();
+                                        System.out.println("Error in accessing location: " + e.getMessage());
                                         return;
                                     }
                                     Map<String,Object> user = new HashMap<>();
@@ -100,12 +102,12 @@ public class Register extends AppCompatActivity {
                                     });
                                 } else {
                                     System.out.println("Login failed");
-                                    System.out.println(task.getException());
+                                    System.out.println(task.getException().getMessage());
                                 }
                             }
                         });
                     } else {
-                        Toast.makeText(Register.this,"User already registered",Toast.LENGTH_LONG);
+                        Toast.makeText(Register.this,"User already registered",Toast.LENGTH_LONG).show();
                     }
                 }
             }

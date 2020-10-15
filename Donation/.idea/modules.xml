@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/Donation.iml" filepath="$PROJECT_DIR$/.idea/modules/Donation.iml" group="Donation" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/DonationPlatform-Donation.iml" filepath="$PROJECT_DIR$/.idea/modules/DonationPlatform-Donation.iml" group="Donation" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Git-DonationPlatform-Donation.iml" filepath="$PROJECT_DIR$/.idea/modules/Git-DonationPlatform-Donation.iml" group="Donation" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/app.iml" group="Donation/app" />
     </modules>
   </component>
