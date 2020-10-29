@@ -39,7 +39,23 @@ public class categories extends AppCompatActivity implements View.OnClickListene
     public void onClick(View v)
     {
         Intent intent=new Intent(categories.this,explore.class);
-        intent.putExtra("ID",v.getId());
+        int cat = v.getId();
+        if(cat==R.id.booksimg)
+            intent.putExtra("Category","Books");
+        else if(cat==R.id.clothesimg)
+            intent.putExtra("Category","Clothes");
+        else if(cat==R.id.furnitureimg)
+            intent.putExtra("Category","Furniture");
+        else if(cat==R.id.electronicsimg)
+            intent.putExtra("Category","Electronics");
+        else if(cat==R.id.grainsimg)
+            intent.putExtra("Category","Grains and Pulses");
+        else if(cat==R.id.stationaryimg)
+            intent.putExtra("Category","Stationary");
+        else if(cat==R.id.utensilsimg)
+            intent.putExtra("Category","Utensils");
+        else if(cat==R.id.financeimg)
+            intent.putExtra("Category","Financial Aid");
         startActivity(intent);
     }
 }

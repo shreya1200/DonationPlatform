@@ -5,97 +5,125 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center"
+    android:background="@drawable/ic_background"
     android:foregroundGravity="center"
     app:layout_anchorGravity="center"
     tools:context=".profile">
 
-    <TableLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        android:gravity="clip_vertical"
+        android:layout_marginTop="30dp"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            app:srcCompat="@drawable/bluelogo" />
 
-            <TextView
-                android:id="@+id/profiletxt"
+        <androidx.cardview.widget.CardView
+            android:id="@+id/profilecard"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center_horizontal"
+            app:cardCornerRadius="50dp"
+            app:cardUseCompatPadding="true">
+
+            <ImageView
+                android:id="@+id/profileimg"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/amaranth"
-                android:text="Profile"
-                android:textColor="#ffa200"
-                android:textSize="36sp"
-                android:textStyle="bold" />
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center">
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/profilecard"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_gravity="center"
-                app:cardCornerRadius="50dp"
-                app:cardUseCompatPadding="true">
+                android:background="@drawable/imagebg"
+                android:scaleType="centerCrop"
+                tools:srcCompat="@tools:sample/avatars" />
 
-                <ImageView
-                    android:id="@+id/profileimg"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    tools:srcCompat="@tools:sample/avatars" />
-            </androidx.cardview.widget.CardView>
-        </TableRow>
+        </androidx.cardview.widget.CardView>
 
-        <TableRow
+        <TextView
+            android:id="@+id/nametxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:fontFamily="@font/amaranth"
+            android:text="Shreya Gore"
+            android:textColor="#0B1A58"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/emailtxt"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center">
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/amaranth"
+            android:gravity="center_horizontal"
+            android:text="Email:shreya.gore2000@gmail.com"
+            android:textColor="#0B1A58"
+            android:textSize="16sp" />
 
-            <TextView
-                android:id="@+id/instructions1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="person details taken from registration"
-                android:textSize="20sp" />
-        </TableRow>
-
-        <TableRow
+        <TextView
+            android:id="@+id/contacttxt"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center">
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/amaranth"
+            android:gravity="center_horizontal"
+            android:text="Contact:8793736637"
+            android:textColor="#0B1A58"
+            android:textSize="16sp" />
 
-            <TextView
-                android:id="@+id/instructions2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Previous and current donations tab" />
-        </TableRow>
-
-        <TableRow
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center">
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="373dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:outlineProvider="background"
+            android:weightSum="3">
 
             <Button
-                android:id="@+id/proceedToDonatebtn"
-                android:layout_width="wrap_content"
+                android:id="@+id/button"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Proceed to Donate" />
-        </TableRow>
+                android:layout_weight="1"
+                android:background="@drawable/ic_bluebutton"
+                android:backgroundTint="#B0D0E8"
+                android:elevation="10dp"
+                android:ellipsize="middle"
+                android:text="Previous"
+                android:textColor="#0B1A58" />
 
-    </TableLayout>
+            <Button
+                android:id="@+id/proceedToDonate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/ic_bluebutton"
+                android:backgroundTint="#B0D0E8"
+                android:elevation="10dp"
+                android:ellipsize="middle"
+                android:text="Donate"
+                android:textColor="#0B1A58" />
+
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/ic_bluebutton"
+                android:backgroundTint="#B0D0E8"
+                android:elevation="10dp"
+                android:ellipsize="middle"
+                android:text="Current"
+                android:textColor="#0B1A58" />
+        </LinearLayout>
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

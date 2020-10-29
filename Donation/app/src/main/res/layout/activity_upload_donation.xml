@@ -21,10 +21,9 @@
 
         <ImageView
             android:id="@+id/productimg"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:scaleType="centerCrop"
-            tools:srcCompat="@tools:sample/avatars" />
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:scaleType="centerCrop"/>
 
         <Button
             android:id="@+id/uploadimg"
@@ -38,7 +37,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="Product Name" />
+            android:hint="Product Name" />
 
         <Spinner
             android:id="@+id/categories"
@@ -53,7 +52,7 @@
             android:ems="10"
             android:gravity="start|top"
             android:inputType="textMultiLine"
-            tools:text="Product Description" />
+            android:hint="Product Description" />
 
         <Button
             android:id="@+id/donate"

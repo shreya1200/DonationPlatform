@@ -5,19 +5,28 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:background="@drawable/ic_background"
     tools:context=".ui.login.login">
 
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="28dp"
+        android:src="@drawable/logo"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/bluelogo" />
+
     <LinearLayout
+        android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginTop="60dp"
         android:gravity="center"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -30,8 +39,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/amaranth"
+            android:gravity="center_horizontal"
             android:text="Welcome Back!"
-            android:textColor="#ffa200"
+            android:textColor="#0B1A58"
             android:textSize="36sp"
             android:textStyle="bold" />
 
@@ -40,34 +50,36 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/amaranth"
-            android:text="Help us create a better world"
+            android:gravity="center_horizontal"
+            android:text="Lets make a difference!"
+            android:textColor="#0B1A58"
             android:textSize="16sp"
             android:textStyle="bold" />
 
 
         <EditText
             android:id="@+id/email"
-            android:layout_width="match_parent"
+            android:layout_width="315dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="96dp"
-            android:layout_marginEnd="24dp"
-            android:hint="@string/prompt_email"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/ic_email"
+            android:hint="          Email-id"
             android:inputType="textEmailAddress"
-            android:selectAllOnFocus="true" />
+            android:selectAllOnFocus="true"
+            android:textColor="#0B1A58" />
 
         <EditText
             android:id="@+id/password"
-            android:layout_width="match_parent"
+            android:layout_width="315dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
             android:layout_marginTop="8dp"
-            android:layout_marginEnd="24dp"
-            android:hint="@string/prompt_password"
+            android:background="@drawable/ic_password"
+            android:hint="          Password"
             android:imeActionLabel="@string/action_sign_in_short"
             android:imeOptions="actionDone"
             android:inputType="textPassword"
-            android:selectAllOnFocus="true" />
+            android:selectAllOnFocus="true"
+            android:textColor="#0B1A58" />
 
         <Button
             android:id="@+id/login"
@@ -75,14 +87,15 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginStart="48dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="50dp"
             android:layout_marginEnd="48dp"
-            android:layout_marginBottom="64dp"
-            android:background="@drawable/buttondrawable"
+            android:background="@drawable/buttonbg"
 
+            android:backgroundTint="#0B1A58"
             android:enabled="true"
+            android:fontFamily="@font/amaranth"
             android:text="Login"
-            android:textColor="#FFFFFF"
+            android:textColor="#ffffff"
             android:textStyle="bold" />
 
         <TextView
@@ -90,12 +103,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:layout_marginTop="10dp"
             android:clickable="true"
             android:fontFamily="@font/amaranth"
             android:outlineProvider="background"
             android:text="Not a member yet? Register here."
-            android:textColor="#5365EA"
-            android:textStyle="bold" />
+            android:textColor="#0B1A58"
+            android:textStyle="normal" />
 
         <ProgressBar
             android:id="@+id/loading"
@@ -107,6 +121,7 @@
             android:layout_marginEnd="32dp"
             android:layout_marginBottom="64dp"
             android:visibility="gone" />
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

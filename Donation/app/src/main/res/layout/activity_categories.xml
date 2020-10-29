@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_centerInParent="true"
+    android:background="@drawable/ic_background"
     tools:context=".categories">
 
     <TextView
@@ -14,7 +15,7 @@
         android:shadowColor="#B2653A09"
         android:text="Donation Categories"
         android:textAlignment="center"
-        android:textColor="#FFA200"
+        android:textColor="#0B1A58"
         android:textSize="24sp"
         android:textStyle="bold"
         android:typeface="sans"
@@ -298,7 +299,7 @@
         android:layout_height="5dp"
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
-        android:background="#FFA200"
+        android:background="#0B1A58"
         app:layout_constraintBottom_toTopOf="@+id/scrollView2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
