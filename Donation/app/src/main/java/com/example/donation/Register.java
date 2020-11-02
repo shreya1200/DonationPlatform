@@ -38,7 +38,9 @@ import com.google.firebase.storage.UploadTask;
 import com.squareup.picasso.Picasso;
 
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.Objects;
 
 
 public class Register extends AppCompatActivity {
@@ -48,9 +50,7 @@ public class Register extends AppCompatActivity {
     //for profile image upload
     Button uploadphoto;
     ImageView profileimg;
-    Uri ImageUri;
-    String imageUrl;
-    Upload upload;
+    Uri imageUri;
     FirebaseStorage storage;
     StorageReference storageRef;
     FirebaseAuth fauth;
@@ -59,6 +59,15 @@ public class Register extends AppCompatActivity {
     boolean exists;
     LocationManager loc;
     double loc_lat, loc_long; Context context;
+
+    @Override
+    protected void onActivityResult(int requestCode,int resultCode, @Nullable Intent data){
+        super.onActivityResult(requestCode,resultCode,data);
+        if(requestCode==1 && resultCode==RESULT_OK && data!=null){
+            imageUri = data.getData();
+            profileimg.setImageURI(data.getData());
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,11 +89,24 @@ public class Register extends AppCompatActivity {
         uploadphoto=findViewById(R.id.uploadphoto);
         storage = FirebaseStorage.getInstance();
         storageRef = storage.getReference("profile_images/");
-
+        loc = (LocationManager) getSystemService(Context.LOCATION_SERVICE);;
+        assert loc != null;
+        @SuppressLint("MissingPermission") Location location = loc.getLastKnownLocation(LocationManager.PASSIVE_PROVIDER);
+        try{
+            assert location != null;
+            loc_lat = location.getLatitude();
+            loc_long = location.getLongitude();
+        } catch(Exception e) {
+            System.out.println("Error in accessing location: " + e.getMessage());
+            return;
+        }
         uploadphoto.setOnClickListener(new View.OnClickListener() {
                @Override
                public void onClick(View v) {
-                   openFileChooser();
+                   Intent intent = new Intent();
+                   intent.setType("image/*");
+                   intent.setAction(Intent.ACTION_GET_CONTENT);
+                   startActivityForResult(intent,1);
                }
         });
 
@@ -102,116 +124,86 @@ public class Register extends AppCompatActivity {
         registerbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                uploadFile();
-                System.out.println("oooooooooooooooooooooooooooooooooooooooooooo");
-                if (password.getText().toString().equals(confirm.getText().toString())) {
-                    if(true) {
-                        fauth.createUserWithEmailAndPassword(email.getText().toString(), password.getText().toString()).addOnCompleteListener(Register.this, new OnCompleteListener<AuthResult>() {
-                            @Override
-                            public void onComplete(@NonNull Task<AuthResult> task) {
-                                if (task.isSuccessful()) {
-                                    System.out.println("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
-                                    @SuppressLint("MissingPermission") Location location = loc.getLastKnownLocation(LocationManager.PASSIVE_PROVIDER);
-                                    try{
-                                        loc_lat = location.getLatitude();
-                                        loc_long = location.getLongitude();
-                                    } catch(Exception e) {
+                if(password.getText().toString().equals(confirm.getText().toString())){
+                    setContentView(R.layout.loading_screen);
+                    fauth.createUserWithEmailAndPassword(email.getText().toString(),password.getText().toString()).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
+                        @Override
+                        public void onSuccess(AuthResult authResult) {
+
+                            FirebaseUser user = authResult.getUser();
+                            if(user != null){
+                                StorageReference stref = storageRef.child(Objects.requireNonNull(fauth.getCurrentUser()).getUid() + "_" + System.currentTimeMillis() + "." + getExtension(imageUri));
+                                stref.putFile(imageUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                                    @Override
+                                    public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                                        if(taskSnapshot!=null){
+                                            Task<Uri> result = taskSnapshot.getStorage().getDownloadUrl();
+                                            result.addOnSuccessListener(new OnSuccessListener<Uri>() {
+                                                @Override
+                                                public void onSuccess(Uri uri) {
+                                                    profileimg.setImageURI(uri);
+                                                    System.out.println("----ImageURL: " + uri.toString());
+                                                    LinkedHashMap<String,Object> map = new LinkedHashMap<>();
+                                                    map.put("uid", Objects.requireNonNull(fauth.getCurrentUser()).getUid());
+                                                    map.put("name",name.getText().toString());
+                                                    map.put("email",email.getText().toString());
+                                                    map.put("profileImgUrl",uri.toString());
+                                                    map.put("phone","+91"+number.getText().toString());
+                                                    map.put("loc_lat",loc_lat);
+                                                    map.put("loc_long",loc_long);
+                                                    DocumentReference docref = fstore.collection("users").document(fauth.getCurrentUser().getUid());
+                                                    docref.set(map).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                                        @Override
+                                                        public void onSuccess(Void aVoid) {
+                                                            System.out.println("User created successfully!");
+                                                            startActivity(new Intent(Register.this,NewRequirement.class));
+                                                            //startActivity(new Intent(Register.this,homepage.class));
+                                                        }
+                                                    })
+                                                    .addOnFailureListener(new OnFailureListener() {
+                                                        @Override
+                                                        public void onFailure(@NonNull Exception e) {
+                                                            setContentView(R.layout.activity_register);
+                                                            FirebaseUser user = fauth.getCurrentUser();
+                                                            user.delete();
+                                                            System.out.println("Failed to create user");
+                                                        }
+                                                    });
+                                                }
+                                            });
+                                        }
+
+                                        System.out.print("Image upload complete");
+                                        Toast.makeText(Register.this,"Image upload complete",Toast.LENGTH_SHORT).show();
+                                    }
+                                })
+                                .addOnFailureListener(new OnFailureListener() {
+                                    @Override
+                                    public void onFailure(@NonNull Exception e) {
+                                        setContentView(R.layout.activity_register);
                                         FirebaseUser user = fauth.getCurrentUser();
                                         user.delete();
-                                        System.out.println("Error in accessing location: " + e.getMessage());
-                                        return;
+                                        System.out.print("Image upload failed");
+                                        System.out.println(e.getMessage());
+                                        System.out.println(e.getStackTrace());
+                                        Toast.makeText(Register.this,"Image upload failed",Toast.LENGTH_SHORT).show();
                                     }
-                                    System.out.println("yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy");
-                                    Map<String,Object> user = new HashMap<>();
-                                    user.put("uid",fauth.getCurrentUser().getUid());
-                                    user.put("name",name.getText().toString());
-                                    user.put("email",email.getText().toString());
-                                    user.put("number", number.getText().toString());
-                                    System.out.println("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"+upload.getImageUrl());
-                                    user.put("profileimg",upload.getImageUrl());
-                                    user.put("loc_lat",loc_lat);
-                                    user.put("loc_long",loc_long);
-                                    DocumentReference docref = fstore.collection("users").document(fauth.getCurrentUser().getUid());
-                                    docref.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
-                                        @Override
-                                        public void onSuccess(Void aVoid) {
-                                            System.out.println("User added successfully");
-                                            startActivity(new Intent(Register.this,profile.class));
-                                        }
-                                    });
-                                } else {
-                                    System.out.println("Login failed");
-                                    System.out.println(task.getException().getMessage());
-                                }
+                                });
                             }
-                        });
-                    } else {
-                        Toast.makeText(Register.this,"User already registered",Toast.LENGTH_LONG).show();
-                    }
+                        }
+                    });
                 }
+
             }
         });
     }
-    private String getFileExtension(Uri uri){
+
+    private String getExtension(Uri imageUri) {
         ContentResolver cR = getContentResolver();
         MimeTypeMap mime = MimeTypeMap.getSingleton();
-        return mime.getExtensionFromMimeType(cR.getType(uri));
+        return mime.getExtensionFromMimeType(cR.getType(imageUri));
     }
 
-    private void uploadFile() {
-        if(ImageUri!=null){
-            StorageReference fileReferece = storageRef.child(System.currentTimeMillis()+"."+getFileExtension(ImageUri));
-            fileReferece.putFile(ImageUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-                @Override
-                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                    Toast.makeText(Register.this,"Upload Successful",Toast.LENGTH_LONG).show();
-                    if (taskSnapshot.getMetadata() != null) {
-                        if (taskSnapshot.getMetadata().getReference() != null) {
-                            Task<Uri> result = taskSnapshot.getStorage().getDownloadUrl();
-                            result.addOnSuccessListener(new OnSuccessListener<Uri>() {
-                                @Override
-                                public void onSuccess(Uri uri) {
-                                    imageUrl = uri.toString();
-                                    //createNewPost(imageUrl);
-                                    upload = new Upload(imageUrl);
-                                }
-                            });
-                        }
-                    }
-
-                }
-            }).addOnFailureListener(new OnFailureListener() {
-                @Override
-                public void onFailure(@NonNull Exception e) {
-                    Toast.makeText(Register.this,e.getMessage(),Toast.LENGTH_SHORT).show();
-
-                }
-            }).addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
-                @Override
-                public void onProgress(@NonNull UploadTask.TaskSnapshot snapshot) {
-                    double progress = (100.0 * snapshot.getBytesTransferred() / snapshot.getTotalByteCount());
-                }
-            });
-        }
-    }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if(requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK && data != null && data.getData()!=null)
-        {
-            ImageUri=data.getData();
-            Picasso.with(Register.this).load(ImageUri).placeholder(R.drawable.ic_name).into(profileimg);
-//            productimg.setImageURI(ImageUri);
-        }
-    }
-
-    private void openFileChooser() {
-        Intent intent = new Intent();
-        intent.setType("image/*");
-        intent.setAction(Intent.ACTION_GET_CONTENT);
-        startActivityForResult(intent,PICK_IMAGE_REQUEST);
-    }
 }
 
 //    DocumentReference docref = fstore.collection("users").document("user_details").collection("all_users").document(fauth.getCurrentUser().getUid());

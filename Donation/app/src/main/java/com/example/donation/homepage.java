@@ -35,6 +35,7 @@ public class homepage extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        System.out.println("HomePage");
         setContentView(R.layout.activity_homepage);
 
         Button alldonationsbtn =findViewById(R.id.alldonationsbtn);
