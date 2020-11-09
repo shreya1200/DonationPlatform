@@ -156,7 +156,7 @@ public class Register extends AppCompatActivity {
                                                         @Override
                                                         public void onSuccess(Void aVoid) {
                                                             System.out.println("User created successfully!");
-                                                            startActivity(new Intent(Register.this,NewRequirement.class));
+                                                            startActivity(new Intent(Register.this,profile.class));
                                                             //startActivity(new Intent(Register.this,homepage.class));
                                                         }
                                                     })

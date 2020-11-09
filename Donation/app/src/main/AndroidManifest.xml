@@ -15,12 +15,12 @@
         <activity android:name=".NewRequirement"></activity>
         <activity android:name=".UploadDonation" />
         <activity android:name=".profile" />
-        <activity android:name=".MainActivity" />
+        <activity android:name=".Register" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".explore" />
         <activity android:name=".categories" />
         <activity android:name=".homepage" />
-        <activity android:name=".Register">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
