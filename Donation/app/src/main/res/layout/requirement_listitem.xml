@@ -36,83 +36,76 @@
         android:text="Some random text that probably takes more than two lines. Or probably not much space."
         android:textSize="17dp"
         android:fontFamily="@font/amaranth"
-        android:layout_below="@+id/title"/>
+        android:layout_below="@+id/title"
+        android:layout_marginBottom="20dp"/>
     <GridLayout
-        android:layout_marginBottom="20dp"
-        android:layout_width="380dp"
-        android:layout_marginEnd="40dp"
         android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_below="@+id/desc">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Listed By"
+            android:layout_row="0"
+            android:layout_column="0"
+            android:textStyle="bold"
+            android:fontFamily="@font/amaranth"/>
+        <TextView
+            android:id="@+id/listedBy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Some User"
+            android:layout_row="1"
+            android:layout_column="0"
+            android:fontFamily="@font/amaranth"/>
+    </GridLayout>
+
+    <GridLayout
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
         android:layout_below="@+id/desc"
-        android:layout_marginTop="30dp">
-        <GridLayout
-            android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/grid1"
+        android:layout_marginStart="80dp">
+        <TextView
             android:layout_width="wrap_content"
-            android:layout_row="0"
-            android:layout_column="0">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Listed By"
-                android:layout_row="0"
-                android:layout_column="0"
-                android:textStyle="bold"
-                android:fontFamily="@font/amaranth"/>
-            <TextView
-                android:id="@+id/listedBy"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Some User"
-                android:layout_row="1"
-                android:layout_column="0"
-                android:fontFamily="@font/amaranth"/>
-        </GridLayout>
-
-        <GridLayout
             android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
+            android:text="From"
             android:layout_row="0"
-            android:layout_column="1"
-            android:paddingHorizontal="100dp">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="From"
-                android:layout_row="0"
-                android:layout_column="0"
-                android:textStyle="bold"
-                android:fontFamily="@font/amaranth"/>
-            <TextView
-                android:id="@+id/city"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="City"
-                android:layout_row="1"
-                android:layout_column="0"
-                android:fontFamily="@font/amaranth"/>
-        </GridLayout>
-
-        <GridLayout
+            android:layout_column="0"
+            android:textStyle="bold"
+            android:fontFamily="@font/amaranth"/>
+        <TextView
+            android:id="@+id/city"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:layout_row="0"
-            android:layout_column="3">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Contact"
-                android:layout_row="0"
-                android:layout_column="0"
-                android:textStyle="bold"
-                android:fontFamily="@font/amaranth"/>
-            <TextView
-                android:id="@+id/contact"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="+91-9876543210"
-                android:layout_row="1"
-                android:layout_column="0"
-                android:fontFamily="@font/amaranth"/>
+            android:text="City"
+            android:layout_row="1"
+            android:layout_column="0"
+            android:fontFamily="@font/amaranth"/>
+    </GridLayout>
 
-        </GridLayout>
+    <GridLayout
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_below="@+id/desc"
+        android:layout_alignParentRight="true"
+        android:layout_marginEnd="20dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Contact"
+            android:layout_row="0"
+            android:layout_column="0"
+            android:textStyle="bold"
+            android:fontFamily="@font/amaranth"/>
+        <TextView
+            android:id="@+id/contact"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+91-9876543210"
+            android:layout_row="1"
+            android:layout_column="0"
+            android:fontFamily="@font/amaranth"/>
+
     </GridLayout>
 </RelativeLayout>
