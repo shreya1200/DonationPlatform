@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/ic_background"
-    tools:context=".DonateProfileActivity">
+    tools:context=".Register">
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -93,7 +93,8 @@
                 android:background="@drawable/ic_name"
                 android:ellipsize="start"
                 android:ems="13"
-                android:hint="               Name"
+                android:paddingStart="45dp"
+                android:hint="Name"
                 android:inputType="textPersonName"
                 android:textColor="#000000"
                 android:textColorHint="#0B1A58"
@@ -108,7 +109,8 @@
                 android:ellipsize="start"
                 android:ems="13"
                 android:gravity="left|center_vertical"
-                android:hint="               Contact Number"
+                android:hint="Contact Number"
+                android:paddingStart="45dp"
                 android:inputType="phone"
                 android:textColor="#000000"
                 android:textColorHint="#0B1A58"
@@ -126,8 +128,9 @@
                 android:background="@drawable/ic_email"
                 android:ellipsize="start"
                 android:ems="13"
-                android:hint="               Email-Id"
+                android:hint="Email-Id"
                 android:inputType="textEmailAddress"
+                android:paddingStart="45dp"
                 android:textColor="#000000"
                 android:textColorHint="#0B1A58"
                 android:textSize="14sp" />
@@ -140,8 +143,9 @@
                 android:background="@drawable/ic_password"
                 android:ellipsize="start"
                 android:ems="13"
-                android:hint="               Password"
-                android:inputType="text"
+                android:hint="Password"
+                android:paddingStart="45dp"
+                android:inputType="textPassword"
                 android:textColor="#000000"
                 android:textColorHint="#0B1A58"
                 android:textSize="14sp" />
@@ -154,8 +158,9 @@
                 android:background="@drawable/ic_confirmpassword"
                 android:ellipsize="start"
                 android:ems="13"
-                android:hint="               Confirm Password"
-                android:inputType="text"
+                android:hint="Confirm Password"
+                android:paddingStart="45dp"
+                android:inputType="textPassword"
                 android:textColor="#000000"
                 android:textColorHint="#0B1A58"
                 android:textSize="14sp" />

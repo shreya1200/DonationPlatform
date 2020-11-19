@@ -10,17 +10,40 @@
         android:layout_height="wrap_content"
         android:text="Add New Requirement"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="90dp"
         android:textSize="30dp"/>
+
     <EditText
-        android:layout_marginTop="220dp"
+        android:layout_marginTop="170dp"
+        android:id="@+id/name"
+        android:layout_centerHorizontal="true"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Name" />
+
+    <EditText
+        android:id="@+id/number"
+        android:layout_centerHorizontal="true"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:ems="10"
+        android:inputType="phone"
+        android:hint="Contact Number"
+        android:layout_below="@id/name"
+        android:layout_marginTop="20dp"/>
+
+    <EditText
         android:id="@+id/title"
         android:layout_centerHorizontal="true"
         android:layout_width="300dp"
         android:layout_height="40dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:hint="Title" />
+        android:hint="Title"
+        android:layout_below="@id/number"
+        android:layout_marginTop="20dp"/>
 
     <Spinner
         android:id="@+id/categories"
@@ -67,4 +90,27 @@
         android:id="@+id/submit"
         android:layout_below="@id/desc"
         android:layout_marginTop="40dp"/>
+    <TextView
+        android:id="@+id/success"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/submit"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:text="Requirement posted successfully!"
+        android:textSize="20dp"
+        android:textColor="#008000"
+        android:visibility="invisible"/>
+    <TextView
+        android:id="@+id/failed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/submit"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:text="Failed to post requirement\nPlease try again."
+        android:textSize="20dp"
+        android:textColor="@color/red"
+        android:textAlignment="center"
+        android:visibility="invisible"/>
 </RelativeLayout>

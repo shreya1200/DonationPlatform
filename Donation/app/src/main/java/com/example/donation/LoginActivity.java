@@ -23,7 +23,7 @@ import java.util.Objects;
 public class LoginActivity extends AppCompatActivity {
     EditText email,password;
     Button login;
-    TextView registerhere;
+    TextView registerhere;TextView forgot_password;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,7 +32,7 @@ public class LoginActivity extends AppCompatActivity {
         password = findViewById(R.id.password);
         login = findViewById(R.id.login);
         registerhere = findViewById(R.id.registerhere);
-
+        forgot_password = findViewById(R.id.forgot);
         final FirebaseAuth fauth;
         fauth = FirebaseAuth.getInstance();
         login.setOnClickListener(new View.OnClickListener() {
@@ -46,7 +46,7 @@ public class LoginActivity extends AppCompatActivity {
                                     // Sign in success, update UI with the signed-in user's information
 //                                    Log.d(TAG, "signInWithEmail:success");
                                     FirebaseUser user = fauth.getCurrentUser();
-                                    startActivity(new Intent(LoginActivity.this,profile.class));
+                                    startActivity(new Intent(LoginActivity.this,homepage.class));
                                 } else {
                                     // If sign in fails, display a message to the user.
 //                                    Log.w(TAG, "signInWithEmail:failure", task.getException());
@@ -57,6 +57,14 @@ public class LoginActivity extends AppCompatActivity {
                                 }
                             }
                         });
+            }
+        });
+
+        forgot_password.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this,PasswordReset.class);
+                startActivity(intent);
             }
         });
 

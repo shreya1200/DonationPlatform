@@ -5,9 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a6381707-6a76-4352-8426-c03c8efc014e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Donation/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Donation/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Donation/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Donation/local.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Donation/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/Donation/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Donation/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Donation/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Donation/app/src/main/java/com/example/donation/LoginActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/Donation/app/src/main/java/com/example/donation/LoginActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Donation/app/src/main/java/com/example/donation/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/Donation/app/src/main/java/com/example/donation/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Donation/app/src/main/java/com/example/donation/NewRequirement.java" beforeDir="false" afterPath="$PROJECT_DIR$/Donation/app/src/main/java/com/example/donation/NewRequirement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Donation/app/src/main/java/com/example/donation/Register.java" beforeDir="false" afterPath="$PROJECT_DIR$/Donation/app/src/main/java/com/example/donation/Register.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Donation/app/src/main/res/drawable-xxxhdpi/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/Donation/app/src/main/res/drawable-xxxhdpi/logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Donation/app/src/main/res/layout/activity_login.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Donation/app/src/main/res/layout/activity_login.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Donation/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Donation/app/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Donation/app/src/main/res/layout/activity_new_requirement.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Donation/app/src/main/res/layout/activity_new_requirement.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Donation/app/src/main/res/layout/activity_register.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Donation/app/src/main/res/layout/activity_register.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,7 +32,9 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/Donation" />
     <property name="settings.editor.selected.configurable" value="debugger.stepping" />
     <property name="show.migrate.to.gradle.popup" value="false" />
@@ -51,10 +61,10 @@
       <screen x="0" y="0" width="1366" height="732" />
     </state>
     <state x="146" y="25" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.732@0.0.1366.732" timestamp="1604569449124" />
-    <state x="449" y="105" key="FileChooserDialogImpl" timestamp="1604569624538">
-      <screen x="0" y="0" width="1366" height="732" />
+    <state x="421" y="130" key="FileChooserDialogImpl" timestamp="1605767691944">
+      <screen x="0" y="31" width="1280" height="689" />
     </state>
     <state x="449" y="105" key="FileChooserDialogImpl/0.0.1366.732@0.0.1366.732" timestamp="1604569624538" />
-    <state x="421" y="130" key="FileChooserDialogImpl/0.31.1280.689@0.31.1280.689" timestamp="1604295138160" />
+    <state x="421" y="130" key="FileChooserDialogImpl/0.31.1280.689@0.31.1280.689" timestamp="1605767691944" />
   </component>
 </project>

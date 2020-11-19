@@ -90,16 +90,6 @@ public class Register extends AppCompatActivity {
         storage = FirebaseStorage.getInstance();
         storageRef = storage.getReference("profile_images/");
         loc = (LocationManager) getSystemService(Context.LOCATION_SERVICE);;
-        assert loc != null;
-        @SuppressLint("MissingPermission") Location location = loc.getLastKnownLocation(LocationManager.PASSIVE_PROVIDER);
-        try{
-            assert location != null;
-            loc_lat = location.getLatitude();
-            loc_long = location.getLongitude();
-        } catch(Exception e) {
-            System.out.println("Error in accessing location: " + e.getMessage());
-            return;
-        }
         uploadphoto.setOnClickListener(new View.OnClickListener() {
                @Override
                public void onClick(View v) {
@@ -124,6 +114,16 @@ public class Register extends AppCompatActivity {
         registerbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                assert loc != null;
+                @SuppressLint("MissingPermission") Location location = loc.getLastKnownLocation(LocationManager.PASSIVE_PROVIDER);
+                try{
+                    assert location != null;
+                    loc_lat = location.getLatitude();
+                    loc_long = location.getLongitude();
+                } catch(Exception e) {
+                    System.out.println("Error in accessing location: " + e.getMessage());
+                    return;
+                }
                 if(password.getText().toString().equals(confirm.getText().toString())){
                     setContentView(R.layout.loading_screen);
                     fauth.createUserWithEmailAndPassword(email.getText().toString(),password.getText().toString()).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
@@ -156,7 +156,7 @@ public class Register extends AppCompatActivity {
                                                         @Override
                                                         public void onSuccess(Void aVoid) {
                                                             System.out.println("User created successfully!");
-                                                            startActivity(new Intent(Register.this,profile.class));
+                                                            startActivity(new Intent(Register.this,homepage.class));
                                                             //startActivity(new Intent(Register.this,homepage.class));
                                                         }
                                                     })
