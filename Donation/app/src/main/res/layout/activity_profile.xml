@@ -20,11 +20,31 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="100dp"
-            android:layout_height="30dp"
-            app:srcCompat="@drawable/bluelogo" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="100dp"
+                android:layout_height="30dp"
+                app:srcCompat="@drawable/bluelogo" />
+
+            <Button
+                android:id="@+id/logoutBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginEnd="30dp"
+                android:background="@drawable/ic_bluebutton"
+                android:backgroundTint="#00B0D0E8"
+                android:elevation="10dp"
+                android:ellipsize="end"
+                android:gravity="center|end"
+                android:text="Logout"
+                android:textColor="#0B1A58" />
+        </LinearLayout>
 
         <androidx.cardview.widget.CardView
             android:id="@+id/profilecard"
@@ -35,7 +55,7 @@
             app:cardUseCompatPadding="true">
 
             <ImageView
-                android:id="@+id/profileimg"
+                android:id="@+id/productImg"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
@@ -51,7 +71,6 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:fontFamily="@font/amaranth"
-            android:text="Shreya Gore"
             android:textColor="#0B1A58"
             android:textSize="24sp"
             android:textStyle="bold" />
@@ -62,7 +81,6 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/amaranth"
             android:gravity="center_horizontal"
-            android:text="Email:shreya.gore2000@gmail.com"
             android:textColor="#0B1A58"
             android:textSize="16sp" />
 
@@ -72,7 +90,6 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/amaranth"
             android:gravity="center_horizontal"
-            android:text="Contact:8793736637"
             android:textColor="#0B1A58"
             android:textSize="16sp" />
 
@@ -80,15 +97,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
             android:layout_marginEnd="10dp"
-            android:layout_marginBottom="373dp"
+            android:layout_marginBottom="20dp"
             android:gravity="center"
             android:orientation="horizontal"
             android:outlineProvider="background"
             android:weightSum="3">
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/prevDonationsBtn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -112,7 +130,7 @@
                 android:textColor="#0B1A58" />
 
             <Button
-                android:id="@+id/button2"
+                android:id="@+id/currDonationsBtn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -122,7 +140,21 @@
                 android:ellipsize="middle"
                 android:text="Current"
                 android:textColor="#0B1A58" />
+
         </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/DonationsLists"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+        <ProgressBar
+            android:id="@+id/progressBar2"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
     </LinearLayout>
 

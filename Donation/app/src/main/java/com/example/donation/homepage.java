@@ -16,6 +16,7 @@ import android.widget.Toast;
 
 import com.example.donation.Model.Articles;
 import com.example.donation.Model.Headlines;
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,6 +31,7 @@ public class homepage extends AppCompatActivity {
     SwipeRefreshLayout swipeRefreshLayout;
     final String API_KEY = "6916b7e00cff4da29657577b21cef2e7";
     Adapter adapter;
+    FirebaseAuth fauth= FirebaseAuth.getInstance();
     List<Articles> articles = new ArrayList<>();
 
     @Override
@@ -37,6 +39,9 @@ public class homepage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         System.out.println("HomePage");
         setContentView(R.layout.activity_homepage);
+        if(fauth.getCurrentUser()!=null){
+            fauth.signOut();
+        }
 
         Button alldonationsbtn =findViewById(R.id.alldonationsbtn);
         alldonationsbtn.setOnClickListener(new View.OnClickListener() {
@@ -55,6 +60,27 @@ public class homepage extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        Button postReqBtn=findViewById(R.id.postreqbtn);
+        postReqBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(homepage.this,NewRequirement.class);
+                startActivity(intent);
+            }
+        });
+
+        Button allReqBtn=findViewById(R.id.allreqbtn);
+        allReqBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(homepage.this,ViewRequirements.class);
+                startActivity(intent);
+            }
+        });
+
+
+
 
         Window w = getWindow();
         w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);

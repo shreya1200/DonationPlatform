@@ -96,24 +96,29 @@ public class explore extends AppCompatActivity{
     }
      public void getAllData(final String cat)
      {
-         Task<QuerySnapshot> donationUploads = fstore.collection("donations").whereEqualTo("categories",cat).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+         Task<QuerySnapshot> donationUploads = fstore.collection("donations").whereEqualTo("categories",cat).whereEqualTo("donated",0).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
              @Override
              public void onComplete(@NonNull Task<QuerySnapshot> task) {
                  if(task.isSuccessful()){
-                     for(QueryDocumentSnapshot document : task.getResult()){
-                         Map<String, Object> data = document.getData();
+//                     fstore.collection("donations").whereEqualTo("donated",0).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+//                         @Override
+//                         public void onComplete(@NonNull Task<QuerySnapshot> task) {
+//                             if(task.isSuccessful()){
+                                 for(QueryDocumentSnapshot document : task.getResult()){
+                                     Map<String, Object> data = document.getData();
 //                         Upload upload = (Upload) data.get(String.valueOf(Upload.class));
-                         Upload upload = new Upload(data);
-                         mUploads.add(upload);
+                                     Upload upload = new Upload(data);
+                                     mUploads.add(upload);
+                                 }
+                                 mAdapter = new ImageAdapter(explore.this,mUploads);
+                                 recyclerView.setAdapter(mAdapter);
+                                 progressCircle.setVisibility(View.INVISIBLE);
 
-                     }
-                     mAdapter = new ImageAdapter(explore.this,mUploads);
-                     recyclerView.setAdapter(mAdapter);
-                     progressCircle.setVisibility(View.INVISIBLE);
+//                             }
+//                         }
+//                     }) ;
                  }
              }
          });
-
-
      }
 }

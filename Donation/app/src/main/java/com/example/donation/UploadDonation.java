@@ -158,6 +158,7 @@ public class UploadDonation extends AppCompatActivity {
 //                    upload = new Upload(productName.getText().toString().trim(), imageUrl);
 //                    Objects.requireNonNull(Objects.requireNonNull(taskSnapshot.getMetadata()).getReference()).getDownloadUrl().toString()
                                     if(fauth.getCurrentUser() != null) {
+                                        String donation_id=fauth.getCurrentUser().getUid()+System.currentTimeMillis();
 //                    uploadImage();
                                         Map<String, Object> donation = new HashMap<>();
                                         donation.put("uid", fauth.getCurrentUser().getUid());
@@ -167,7 +168,9 @@ public class UploadDonation extends AppCompatActivity {
                                         donation.put("product_description", productDescription.getText().toString());
                                         donation.put("imageurl",upload.getImageUrl());
                                         donation.put("product_name",upload.getName());
-                                        DocumentReference donationtbl = fstore.collection("donations").document(fauth.getCurrentUser().getUid()+System.currentTimeMillis());
+                                        donation.put("donated",0);
+                                        donation.put("donation_id",donation_id);
+                                        DocumentReference donationtbl = fstore.collection("donations").document(donation_id);
                                         donationtbl.set(donation).addOnSuccessListener(new OnSuccessListener<Void>() {
                                             @Override
                                             public void onSuccess(Void aVoid) {

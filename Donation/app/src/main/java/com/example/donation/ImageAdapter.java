@@ -1,7 +1,9 @@
 package com.example.donation;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
+import android.os.Parcelable;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -25,6 +28,7 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.squareup.picasso.Picasso;
 
+import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
 
@@ -53,54 +57,18 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
 
     @Override
     public void onBindViewHolder(@NonNull ImageViewHolder holder, int position) {
-        String nameDonor;
         System.out.println("position="+position);
         System.out.println("mUploadsLength="+mUploads.size());
         Upload uploadCurrent = mUploads.get(position);
-//        if(uploadCurrent==null){
-//            System.out.print("Upload current is null"+uploadCurrent);
-//            return;
-//        }
         System.out.println("uploadCurrent.getName()"+uploadCurrent.getName());
         holder.textViewName.setText(uploadCurrent.getName());
-//        DocumentReference donorName = fstore.collection("users").document(fauth.getCurrentUser().getUid());
-//        donorName.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-//            @Override
-//            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-//                if (task.isSuccessful()) {
-//                    DocumentSnapshot document = task.getResult();
-//                    if (document.exists()) {
-//                        document.getData();
-//                        nameDonor[0] = data.get("name").toString();
-//                        System.out.println(document.getData());
-//                    } else {
-//                        System.out.println("not found");
-//                    }
-//                } else {
-//                    System.out.println("Task unsuccessful");
-//                }
-//            }
-//        });
-//        System.out.println("nameDonor[0]"+nameDonor[0]);
         System.out.println("hello");
           holder.textViewDonor.setText(uploadCurrent.getUser_name());
           System.out.println("abc");
           System.out.print("uploadCurrent.getImageUrl"+uploadCurrent.getImageUrl());
-         System.out.println("abc");
-//        storageRef.child(uploadCurrent.getImageUrl()).getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-//            @Override
-//            public void onSuccess(Uri uri) {
-//                imgURL=uri;
-//                // Got the download URL for 'users/me/profile.png'
-//            }
-//        }).addOnFailureListener(new OnFailureListener() {
-//            @Override
-//            public void onFailure(@NonNull Exception exception) {
-//                // Handle any errors
-//            }
-//        });
+          System.out.println("abc");
           Picasso.with(context).load(uploadCurrent.getImageUrl()).placeholder(R.mipmap.ic_launcher).fit().centerCrop().into(holder.imageView);
-        System.out.println("abc");
+          System.out.println("abc");
     }
 
     @Override
@@ -113,13 +81,25 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
         public TextView textViewName;
         public ImageView imageView;
         public TextView textViewDonor;
+        private Upload upload;
 
         public ImageViewHolder(@NonNull View itemView) {
             super(itemView);
             textViewName = itemView.findViewById(R.id.itemName);
             textViewDonor = itemView.findViewById(R.id.donorName);
             imageView = itemView.findViewById(R.id.imageItem);
+            imageView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    upload = mUploads.get(getLayoutPosition());
+                    Intent intent=new Intent(v.getContext(),ProductDetails.class);
+                    intent.putExtra("upload",upload);
+                    context.startActivity(intent);
 
+
+                }
+            });
         }
+
     }
 }

@@ -22,7 +22,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
@@ -32,14 +31,10 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
-import com.squareup.picasso.Picasso;
 
-import java.util.HashMap;
 import java.util.LinkedHashMap;
-import java.util.Map;
 import java.util.Objects;
 
 
@@ -85,7 +80,7 @@ public class Register extends AppCompatActivity {
         number = findViewById(R.id.number);
 
         //for profile image
-        profileimg = findViewById(R.id.profileimg);
+        profileimg = findViewById(R.id.productImg);
         uploadphoto=findViewById(R.id.uploadphoto);
         storage = FirebaseStorage.getInstance();
         storageRef = storage.getReference("profile_images/");
