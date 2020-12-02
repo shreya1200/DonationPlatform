@@ -5,10 +5,10 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:layout_marginTop="10dp"
-    android:padding="20dp"
 
+    android:orientation="vertical"
+    android:padding="20dp"
     tools:context=".LoginActivity">
 
 
@@ -16,6 +16,7 @@
         android:id="@+id/logo"
         android:layout_width="80dp"
         android:layout_height="50dp"
+        android:layout_marginTop="25dp"
         android:transitionName="logo_text"
         app:srcCompat="@drawable/logo" />
 
@@ -24,20 +25,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/overlock_bold"
-        android:textStyle="bold"
         android:text="Hello there, "
         android:textColor="#F97068"
         android:textSize="40sp"
+        android:textStyle="bold"
         android:transitionName="logo_image" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/overlock_bold"
-        android:textStyle="bold"
         android:text="Welcome Back "
         android:textColor="#F97068"
-        android:textSize="40sp"/>
+        android:textSize="40sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/signinlo"
@@ -61,17 +62,15 @@
         app:layout_constraintTop_toTopOf="parent">
 
 
-
-
         <EditText
             android:id="@+id/email"
             android:layout_width="315dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
             android:background="@drawable/ic_email"
-            android:paddingStart="45dp"
             android:hint="Email-id"
             android:inputType="textEmailAddress"
+            android:paddingStart="45dp"
             android:selectAllOnFocus="true"
             android:textColor="#0B1A58" />
 
@@ -82,10 +81,10 @@
             android:layout_marginTop="8dp"
             android:background="@drawable/ic_password"
             android:hint="Password"
-            android:paddingStart="45dp"
             android:imeActionLabel="@string/action_sign_in_short"
             android:imeOptions="actionDone"
             android:inputType="textPassword"
+            android:paddingStart="45dp"
             android:selectAllOnFocus="true"
             android:textColor="#0B1A58" />
 
@@ -108,6 +107,7 @@
 
             android:textSize="14sp"
             android:textStyle="bold" />
+
         <TextView
             android:id="@+id/forgot"
             android:layout_width="wrap_content"
@@ -146,8 +146,6 @@
             android:visibility="gone" />
 
     </LinearLayout>
-
-
 
 
 </LinearLayout>

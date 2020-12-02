@@ -10,14 +10,15 @@
 
 
     <Button
+        android:id="@+id/skipBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Skip"
-        android:id="@+id/skipBtn"
-        android:onClick="skip"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="35dp"
         android:layout_marginRight="20dp"
         android:background="#00000000"
+        android:fontFamily="@font/overlock_bold"
+        android:onClick="skip"
+        android:text="Skip"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />

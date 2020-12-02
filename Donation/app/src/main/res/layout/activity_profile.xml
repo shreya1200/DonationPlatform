@@ -27,11 +27,13 @@
                 android:layout_width="50dp"
                 android:layout_height="30dp"
 
-                app:srcCompat="@drawable/liggi"/>
+                android:layout_marginTop="15dp"
+                app:srcCompat="@drawable/liggi" />
 
             <ImageView
                 android:layout_width="40dp"
                 android:layout_height="30dp"
+                android:layout_marginTop="15dp"
                 android:layout_toRightOf="@id/logo"
                 android:background="@drawable/ekiya" />
 
@@ -39,6 +41,7 @@
                 android:id="@+id/logoutBtn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
                 android:background="#00FFFFFF"
                 android:text="logout"
                 android:textAlignment="textEnd"
@@ -49,7 +52,11 @@
                 android:layout_width="100dp"
                 android:layout_height="100dp"
 
+                android:layout_alignWithParentIfMissing="true"
+                android:layout_below="@id/logo"
                 android:layout_alignParentBottom="true"
+                android:layout_centerVertical="false"
+                android:layout_marginTop="10dp"
                 android:layout_marginBottom="-5dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/walpaper"
@@ -59,12 +66,13 @@
                 android:id="@+id/nametxt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignWithParentIfMissing="true"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="52dp"
+                android:layout_marginTop="57dp"
                 android:layout_toRightOf="@id/productImg"
                 android:fontFamily="@font/acme"
-                android:includeFontPadding="false"
 
+                android:includeFontPadding="false"
                 android:text="Apoorva Patil"
                 android:textColor="#f97068"
                 android:textSize="20sp" />

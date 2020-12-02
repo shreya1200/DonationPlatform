@@ -10,10 +10,10 @@
         android:id="@+id/logo"
         android:layout_width="60dp"
         android:layout_height="50dp"
-        android:transitionName="logo_text"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="40dp"
         android:background="@drawable/logo"
-        android:layout_marginTop="30dp"
-        android:layout_marginLeft="30dp"/>
+        android:transitionName="logo_text" />
 
     <TextView
         android:id="@+id/helloo"

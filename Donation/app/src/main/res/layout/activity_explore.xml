@@ -24,12 +24,6 @@
             android:cropToPadding="true"
             android:scaleType="centerCrop" />
 
-        <ProgressBar
-            android:id="@+id/progress_circle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"/>
-
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/exploreItems"
             android:layout_width="wrap_content"
@@ -37,6 +31,12 @@
 
 
         </androidx.recyclerview.widget.RecyclerView>
+
+        <ProgressBar
+            android:id="@+id/progress_circle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
