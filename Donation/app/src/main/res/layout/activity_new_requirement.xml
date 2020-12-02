@@ -1,116 +1,181 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".NewRequirement">
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Add New Requirement"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="90dp"
-        android:textSize="30dp"/>
 
-    <EditText
-        android:layout_marginTop="170dp"
-        android:id="@+id/name"
-        android:layout_centerHorizontal="true"
-        android:layout_width="300dp"
-        android:layout_height="40dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:hint="Name" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="30dp"
+        android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/number"
-        android:layout_centerHorizontal="true"
-        android:layout_width="300dp"
-        android:layout_height="40dp"
-        android:ems="10"
-        android:inputType="phone"
-        android:hint="Contact Number"
-        android:layout_below="@id/name"
-        android:layout_marginTop="20dp"/>
 
-    <EditText
-        android:id="@+id/title"
-        android:layout_centerHorizontal="true"
-        android:layout_width="300dp"
-        android:layout_height="40dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:hint="Title"
-        android:layout_below="@id/number"
-        android:layout_marginTop="20dp"/>
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:transitionName="logo_text"
+            app:srcCompat="@drawable/logo" />
 
-    <Spinner
-        android:id="@+id/categories"
-        android:layout_width="300dp"
-        android:layout_height="40dp"
-        android:layout_below="@id/title"
-        android:layout_centerHorizontal="true"
-        android:entries="@array/categories"
-        android:layout_marginTop="20dp"/>
-    <EditText
-        android:id="@+id/loc"
-        android:layout_centerHorizontal="true"
-        android:layout_width="300dp"
-        android:layout_height="40dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:hint="Locality"
-        android:layout_below="@id/categories"
-        android:layout_marginTop="20dp"/>
+        <TextView
+            android:id="@+id/helloo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/overlock_bold"
+            android:textStyle="bold"
+            android:text="Add a new Requirement! "
+            android:textColor="#F97068"
+            android:textSize="30sp"
+            android:layout_marginTop="5dp"
+            android:transitionName="logo_image" />
+        <TextView
+            android:id="@+id/signinlo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:text="We are here to listen to your needs!"
+            android:textSize="18sp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="480dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/backtexture"
+            android:orientation="vertical"
+            android:padding="20dp">
 
-    <Spinner
-        android:id="@+id/city"
-        android:layout_width="300dp"
-        android:layout_height="40dp"
-        android:layout_below="@id/loc"
-        android:layout_centerHorizontal="true"
-        android:entries="@array/cities"
-        android:layout_marginTop="20dp"/>
-    <EditText
-        android:id="@+id/desc"
-        android:layout_centerHorizontal="true"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textMultiLine"
-        android:hint="Description"
-        android:layout_below="@id/city"
-        android:layout_marginTop="20dp"/>
-    <Button
-        android:layout_centerHorizontal="true"
-        android:text="Add"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/submit"
-        android:layout_below="@id/desc"
-        android:layout_marginTop="40dp"/>
-    <TextView
-        android:id="@+id/success"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/submit"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp"
-        android:text="Requirement posted successfully!"
-        android:textSize="20dp"
-        android:textColor="#008000"
-        android:visibility="invisible"/>
-    <TextView
-        android:id="@+id/failed"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/submit"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp"
-        android:text="Failed to post requirement\nPlease try again."
-        android:textSize="20dp"
-        android:textColor="@color/red"
-        android:textAlignment="center"
-        android:visibility="invisible"/>
-</RelativeLayout>
+
+            <EditText
+                android:layout_width="315dp"
+                android:id="@+id/name"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/ic_name"
+                android:ellipsize="start"
+                android:ems="13"
+                android:paddingStart="45dp"
+                android:hint="Name"
+                android:inputType="textPersonName"
+                android:textColor="#000000"
+                android:textSize="14sp"  />
+
+            <EditText
+                android:layout_width="315dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/ic_phone"
+                android:ellipsize="start"
+                android:ems="13"
+                android:paddingStart="45dp"
+                android:hint="Contact No"
+                android:id="@+id/number"
+                android:inputType="textPersonName"
+                android:textColor="#000000"
+                android:textSize="14sp"
+                tools:ignore="InvalidId" />
+
+            <EditText
+                android:layout_width="315dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/ic_title_"
+                android:ellipsize="start"
+                android:ems="13"
+                android:id="@+id/title"
+                android:paddingStart="45dp"
+                android:hint="Title"
+                android:inputType="textPersonName"
+                android:textColor="#000000"
+                android:textSize="14sp"  />
+
+            <Spinner
+                android:id="@+id/categories"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+
+                android:layout_marginTop="15dp"
+                android:entries="@array/categories" />
+
+            <EditText
+                android:layout_width="315dp"
+                android:id="@+id/loc"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/ic_location"
+                android:ellipsize="start"
+                android:ems="13"
+                android:paddingStart="45dp"
+                android:hint="Locality"
+                android:inputType="textPersonName"
+                android:textColor="#000000"
+                android:textSize="14sp"  />
+            <Spinner
+                android:id="@+id/city"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="15dp"
+                android:entries="@array/cities" />
+
+            <EditText
+                android:layout_width="315dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:id="@+id/desc"
+                android:background="@drawable/ic_description"
+                android:ellipsize="start"
+                android:ems="13"
+                android:paddingStart="45dp"
+                android:hint="Description"
+                android:inputType="textMultiLine"
+                android:textColor="#000000"
+                android:textSize="14sp"  />
+
+
+        </LinearLayout>
+
+
+        <Button
+            android:id="@+id/submit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:textAlignment="center"
+            android:background="#ED765E"
+            android:textColor="@color/white"
+            android:text="Add requirement" />
+        <TextView
+            android:id="@+id/success"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/submit"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="40dp"
+            android:text="Requirement posted successfully!"
+            android:textSize="20dp"
+            android:textColor="#008000"
+            android:visibility="invisible"/>
+        <TextView
+            android:id="@+id/failed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/submit"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="40dp"
+            android:text="Failed to post requirement\nPlease try again."
+            android:textSize="20dp"
+            android:textColor="@color/red"
+            android:textAlignment="center"
+            android:visibility="invisible"/>
+
+
+
+
+
+    </LinearLayout>
+
+
+
+
+</ScrollView>

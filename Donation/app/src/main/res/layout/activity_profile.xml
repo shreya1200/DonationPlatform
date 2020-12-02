@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center"
-    android:background="@drawable/ic_background"
     android:foregroundGravity="center"
     app:layout_anchorGravity="center"
     tools:context=".profile">
@@ -13,93 +12,101 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="30dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:orientation="vertical">
 
-        <LinearLayout
+
+
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_height="200dp"
+            android:background="@drawable/backtexture"
+            android:padding="30dp">
 
             <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="100dp"
+                android:id="@+id/logo"
+                android:layout_width="50dp"
                 android:layout_height="30dp"
-                app:srcCompat="@drawable/bluelogo" />
+
+                app:srcCompat="@drawable/liggi"/>
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="30dp"
+                android:layout_toRightOf="@id/logo"
+                android:background="@drawable/ekiya" />
 
             <Button
                 android:id="@+id/logoutBtn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="right"
-                android:layout_marginEnd="30dp"
-                android:background="@drawable/ic_bluebutton"
-                android:backgroundTint="#00B0D0E8"
-                android:elevation="10dp"
-                android:ellipsize="end"
-                android:gravity="center|end"
-                android:text="Logout"
-                android:textColor="#0B1A58" />
-        </LinearLayout>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/profilecard"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:layout_gravity="center_horizontal"
-            app:cardCornerRadius="50dp"
-            app:cardUseCompatPadding="true">
+                android:background="#00FFFFFF"
+                android:text="logout"
+                android:textAlignment="textEnd"
+                android:textColor="#f97068" />
 
             <ImageView
                 android:id="@+id/productImg"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:background="@drawable/imagebg"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="-5dp"
                 android:scaleType="centerCrop"
-                tools:srcCompat="@tools:sample/avatars" />
+                android:src="@drawable/walpaper"
+                tools:ignore="UnknownId" />
 
-        </androidx.cardview.widget.CardView>
+            <TextView
+                android:id="@+id/nametxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="52dp"
+                android:layout_toRightOf="@id/productImg"
+                android:fontFamily="@font/acme"
+                android:includeFontPadding="false"
 
-        <TextView
-            android:id="@+id/nametxt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:fontFamily="@font/amaranth"
-            android:textColor="#0B1A58"
-            android:textSize="24sp"
-            android:textStyle="bold" />
+                android:text="Apoorva Patil"
+                android:textColor="#f97068"
+                android:textSize="20sp" />
 
-        <TextView
-            android:id="@+id/emailtxt"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/amaranth"
-            android:gravity="center_horizontal"
-            android:textColor="#0B1A58"
-            android:textSize="16sp" />
+            <TextView
 
-        <TextView
-            android:id="@+id/contacttxt"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/amaranth"
-            android:gravity="center_horizontal"
-            android:textColor="#0B1A58"
-            android:textSize="16sp" />
+                android:layout_width="wrap_content"
+                android:id="@+id/emailtxt"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/nametxt"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@id/productImg"
+                android:fontFamily="@font/overlock_bold"
+                android:includeFontPadding="false"
+                android:text="patilapoorva216@gmail.com"
+                android:textColor="#536878"
+                android:textSize="14sp"
+                android:layout_marginTop="5dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/contacttxt"
+                android:layout_below="@+id/emailtxt"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@id/productImg"
+                android:fontFamily="@font/overlock_bold"
+                android:includeFontPadding="false"
+                android:text="98465783"
+                android:textColor="#536878"
+                android:textSize="14sp"
+                android:layout_marginTop="5dp"/>
+
+
+
+        </RelativeLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginBottom="20dp"
+            android:layout_marginBottom="5dp"
+
             android:gravity="center"
             android:orientation="horizontal"
             android:outlineProvider="background"
@@ -110,39 +117,37 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@drawable/ic_bluebutton"
-                android:backgroundTint="#B0D0E8"
+                android:background="#FE9C8F"
+                android:backgroundTint="#FE9C8F"
                 android:elevation="10dp"
                 android:ellipsize="middle"
                 android:text="Previous"
-                android:textColor="#0B1A58" />
+                android:textColor="#FFFFFF" />
 
             <Button
                 android:id="@+id/proceedToDonate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@drawable/ic_bluebutton"
-                android:backgroundTint="#B0D0E8"
+                android:background="#FE9C8F"
+                android:backgroundTint="#FE9C8F"
                 android:elevation="10dp"
                 android:ellipsize="middle"
                 android:text="Donate"
-                android:textColor="#0B1A58" />
+                android:textColor="#FFFFFF" />
 
             <Button
                 android:id="@+id/currDonationsBtn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@drawable/ic_bluebutton"
-                android:backgroundTint="#B0D0E8"
+                android:background="#FE9C8F"
+                android:backgroundTint="#FE9C8F"
                 android:elevation="10dp"
                 android:ellipsize="middle"
                 android:text="Current"
-                android:textColor="#0B1A58" />
-
+                android:textColor="#FFFFFF" />
         </LinearLayout>
-
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/DonationsLists"
             android:layout_width="match_parent"
@@ -156,6 +161,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
+
+
+
     </LinearLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

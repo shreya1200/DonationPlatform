@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".certificate">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="30dp"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:transitionName="logo_text"
+            app:srcCompat="@drawable/logo" />
+
+        <TextView
+            android:id="@+id/helloo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/overlock_bold"
+            android:textStyle="bold"
+            android:text="We are Grateful! "
+            android:textColor="#F97068"
+            android:textSize="30sp"
+            android:layout_marginTop="5dp"
+            android:transitionName="logo_image" />
+        <TextView
+            android:id="@+id/signinlo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:text="The good acts count!"
+            android:textSize="18sp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="480dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/backtexture"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:background="@drawable/logoo"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="40dp"
+                android:fontFamily="@font/overlock_bold"
+                android:text="Thank you for your precious donation,"
+                android:textAlignment="center"
+                android:textColor="#d53c1d21"
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Donor Name"
+                android:id="@+id/donor_name"
+                android:textAlignment="center"
+                android:layout_gravity="center"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/overlock_bold"
+                android:textSize="24sp"
+                android:textStyle="italic"
+                android:textColor="#f97068"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/overlock_bold"
+                android:text="We  believe that Giving is not just about making a donation but it is also about making a difference, and even the smallest of your contribution is going to bring happiness to a lot of people's lives. Keep donating , spread Happiness and heep supporting us in creating a better world!!"
+                android:textAlignment="center"
+                android:textColor="#D53C1D21"
+                android:textSize="18sp" />
+
+
+        </LinearLayout>
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Back"
+            android:id="@+id/BackBtn"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp"
+            android:background="#00000000"
+            android:textColor="#f97068"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints" />
+
+
+    </LinearLayout>
+
+
+</ScrollView>

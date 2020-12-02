@@ -14,19 +14,21 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/homebg1"
+        android:background="@drawable/backtexture"
+
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+
         <ImageView
             android:id="@+id/imageView2"
             android:layout_width="match_parent"
             android:layout_height="30dp"
             android:layout_marginTop="32dp"
-            app:srcCompat="@drawable/bluelogo" />
+            app:srcCompat="@drawable/logo" />
 
         <TextView
             android:id="@+id/textView"
@@ -37,7 +39,7 @@
             android:padding="15dp"
             android:text="Be Someone's Sunshine when their Skies are Grey."
             android:textAlignment="center"
-            android:textColor="#0B1A58"
+            android:textColor="#F97068"
             android:textSize="24sp" />
 
         <LinearLayout
@@ -146,8 +148,10 @@
                 android:layout_margin="3dp"
                 android:layout_weight="1"
                 android:text="Post Request"
+                android:textColor="#3c1d21"
                 android:textAlignment="center"
-                android:textColor="#0B1A58" />
+
+                />
 
             <TextView
                 android:id="@+id/textView6"
@@ -156,8 +160,8 @@
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:text="All Requests"
-                android:textAlignment="center"
-                android:textColor="#0B1A58" />
+                android:textColor="#3c1d21"
+                android:textAlignment="center" />
 
             <TextView
                 android:id="@+id/textView7"
@@ -166,8 +170,8 @@
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:text="All Donations"
-                android:textAlignment="center"
-                android:textColor="#0B1A58" />
+                android:textColor="#3c1d21"
+                android:textAlignment="center" />
 
             <TextView
                 android:id="@+id/textView8"
@@ -176,8 +180,8 @@
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:text="Donate"
-                android:textAlignment="center"
-                android:textColor="#0B1A58" />
+                android:textColor="#3c1d21"
+                android:textAlignment="center" />
         </LinearLayout>
 
         <androidx.cardview.widget.CardView
@@ -214,7 +218,7 @@
                     android:padding="10dp"
                     android:text="Around The World"
                     android:textAlignment="center"
-                    android:textColor="#0B1A58"
+                    android:textColor="#F97068"
                     android:textIsSelectable="false"
                     android:textSize="22sp"
                     android:textStyle="bold|italic" />
@@ -224,7 +228,7 @@
                     android:layout_width="300dp"
                     android:layout_height="1dp"
                     android:layout_gravity="center"
-                    android:background="#0B1A58" />
+                    android:background="#FFA41B" />
 
                 <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
                     android:id="@+id/swipeRefresh"

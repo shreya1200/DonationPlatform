@@ -1,32 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/ic_background"
-    tools:context=".ui.login.login">
+    android:orientation="vertical"
+    android:layout_marginTop="10dp"
+    android:padding="20dp"
+
+    tools:context=".LoginActivity">
+
 
     <ImageView
         android:id="@+id/logo"
-        android:layout_width="100dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="28dp"
-        android:src="@drawable/logo"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/bluelogo" />
+        android:layout_width="80dp"
+        android:layout_height="50dp"
+        android:transitionName="logo_text"
+        app:srcCompat="@drawable/logo" />
+
+    <TextView
+        android:id="@+id/helloo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/overlock_bold"
+        android:textStyle="bold"
+        android:text="Hello there, "
+        android:textColor="#F97068"
+        android:textSize="40sp"
+        android:transitionName="logo_image" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/overlock_bold"
+        android:textStyle="bold"
+        android:text="Welcome Back "
+        android:textColor="#F97068"
+        android:textSize="40sp"/>
+
+    <TextView
+        android:id="@+id/signinlo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif"
+        android:text="Sign in to continue"
+        android:textSize="18sp" />
+
 
     <LinearLayout
         android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="60dp"
+        android:layout_height="wrap_content"
+
         android:gravity="center"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -34,27 +60,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/welcometext"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/amaranth"
-            android:gravity="center_horizontal"
-            android:text="Welcome Back!"
-            android:textColor="#0B1A58"
-            android:textSize="36sp"
-            android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/helptext"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/amaranth"
-            android:gravity="center_horizontal"
-            android:text="Lets make a difference!"
-            android:textColor="#0B1A58"
-            android:textSize="16sp"
-            android:textStyle="bold" />
 
 
         <EditText
@@ -85,19 +91,22 @@
 
         <Button
             android:id="@+id/login"
-            android:layout_width="200dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginStart="48dp"
             android:layout_marginTop="50dp"
             android:layout_marginEnd="48dp"
-            android:background="@drawable/buttonbg"
+            android:background="#ed765e"
 
-            android:backgroundTint="#0B1A58"
+
+            android:backgroundTint="#ed765e"
             android:enabled="true"
             android:fontFamily="@font/amaranth"
             android:text="Login"
             android:textColor="#ffffff"
+
+            android:textSize="14sp"
             android:textStyle="bold" />
         <TextView
             android:id="@+id/forgot"
@@ -109,7 +118,7 @@
             android:fontFamily="@font/amaranth"
             android:outlineProvider="background"
             android:text="Forgot Password?"
-            android:textColor="#0B1A58"
+            android:textColor="#1E80E9"
             android:textStyle="normal" />
 
         <TextView
@@ -122,7 +131,7 @@
             android:fontFamily="@font/amaranth"
             android:outlineProvider="background"
             android:text="Not a member yet? Register here."
-            android:textColor="#0B1A58"
+            android:textColor="#FFA41B"
             android:textStyle="normal" />
 
         <ProgressBar
@@ -138,4 +147,7 @@
 
     </LinearLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</LinearLayout>

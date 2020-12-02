@@ -175,7 +175,7 @@ public class UploadDonation extends AppCompatActivity {
                                             @Override
                                             public void onSuccess(Void aVoid) {
                                                 System.out.println("Data added successfully");
-                                                Intent intent=new Intent(UploadDonation.this,explore.class);
+                                                Intent intent=new Intent(UploadDonation.this,certificate.class);
                                                 intent.putExtra("Category",categories.getSelectedItem().toString());
                                                 startActivity(intent);
                                             }

@@ -1,35 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UploadDonation">
+    android:orientation="vertical"
+    android:padding="30dp"
 
-    <LinearLayout
+    tools:context=".UploadDonation">
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        app:srcCompat="@drawable/logo"/>
+
+    <TextView
+        android:id="@+id/welcometext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-1dp"
+        android:fontFamily="@font/overlock_bold"
+        android:text="Upload Here!"
+        android:textColor="#f97068"
+        android:textSize="36sp" />
+    <TextView
+        android:id="@+id/helptext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:fontFamily="sans-serif"
+        android:text="Let's make a difference"
+        android:textSize="14sp" />
+
+
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginStart="16dp"
+        android:layout_height="460dp"
         android:layout_marginTop="30dp"
-        android:layout_marginEnd="16dp"
-        android:gravity="center"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:background="@drawable/backtexture"
+
+        android:padding="20dp">
+
 
         <ImageView
             android:id="@+id/productimg"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:scaleType="centerCrop"/>
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="false"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/bookscat"
+            android:scaleType="centerCrop" />
 
         <Button
             android:id="@+id/uploadimg"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Upload Image" />
+            android:layout_width="140dp"
+            android:layout_height="30dp"
+            android:layout_below="@+id/productimg"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="10dp"
+            android:background="#fe9c8f"
+            android:text=" Upload Image "
+            android:textAlignment="center"
+            android:textColor="#ffffff" />
 
         <EditText
             android:id="@+id/productName"
@@ -37,11 +70,17 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/uploadimg"
             android:hint="Product Name" />
 
         <Spinner
             android:id="@+id/categories"
             android:layout_width="wrap_content"
+            android:layout_below="@+id/productName"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
             android:layout_height="40dp"
             android:entries="@array/categories" />
 
@@ -51,14 +90,29 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:gravity="start|top"
+            android:layout_below="@+id/categories"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
             android:inputType="textMultiLine"
             android:hint="Product Description" />
 
         <Button
             android:id="@+id/donate"
-            android:layout_width="wrap_content"
+            android:layout_width="140dp"
             android:layout_height="wrap_content"
-            android:text="Make a Donation" />
-    </LinearLayout>
+            android:layout_below="@+id/productDescription"
+            android:layout_centerHorizontal="true"
+            android:textColor="#ffffff"
+            android:layout_marginTop="10dp"
+            android:textAlignment="center"
+            android:background="#fe9c8f"
+            android:text=" Make a Donation " />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+    </RelativeLayout>
+
+
+
+
+
+</LinearLayout>

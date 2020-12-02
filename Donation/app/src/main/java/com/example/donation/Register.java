@@ -18,6 +18,7 @@ import android.view.View;
 import android.webkit.MimeTypeMap;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -43,7 +44,7 @@ public class Register extends AppCompatActivity {
     Button registerbutton;
     TextView textforlogin;
     //for profile image upload
-    Button uploadphoto;
+    ImageButton uploadphoto;
     ImageView profileimg;
     Uri imageUri;
     FirebaseStorage storage;

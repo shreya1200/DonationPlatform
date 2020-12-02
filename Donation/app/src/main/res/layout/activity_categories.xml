@@ -5,17 +5,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_centerInParent="true"
-    android:background="@drawable/ic_background"
     tools:context=".categories">
 
     <TextView
         android:id="@+id/textcategories"
         android:layout_width="0dp"
         android:layout_height="37dp"
+        android:fontFamily="@font/overlock_bold"
         android:shadowColor="#B2653A09"
         android:text="Donation Categories"
         android:textAlignment="center"
-        android:textColor="#0B1A58"
+        android:textColor="#f97068"
         android:textSize="24sp"
         android:textStyle="bold"
         android:typeface="sans"
@@ -77,6 +77,30 @@
                     android:visibility="visible"
                     app:srcCompat="@drawable/booksimg"
                     tools:visibility="visible" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="#46212738"
+                    android:text="Books"
+                    android:textColor="#fcbf49"
+                    android:textSize="30sp"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/overlock_bold"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="80dp"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="115dp"
+                    android:background="#46212738"
+                    android:fontFamily="@font/overlock_bold"
+                    android:text="Donate BOOKS,BOOK ends,LIFE begins"
+                    android:textColor="#ffffff"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
 
             </androidx.cardview.widget.CardView>
 
@@ -108,6 +132,34 @@
                     app:srcCompat="@drawable/clothes"
                     tools:visibility="visible" />
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="80dp"
+                    android:background="#46212738"
+                    android:elevation="20dp"
+                    android:fontFamily="@font/overlock_bold"
+                    android:text="Clothes"
+                    android:textColor="#fcbf49"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="115dp"
+                    android:background="#46212738"
+
+                    android:elevation="10dp"
+                    android:fontFamily="@font/overlock_bold"
+                    android:text="Tis BETTER to DONATE than ACCUMULATE"
+                    android:textColor="#ffffff"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
@@ -137,6 +189,33 @@
                     android:visibility="visible"
                     app:srcCompat="@drawable/furniture"
                     tools:visibility="visible" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="80dp"
+                    android:background="#46212738"
+                    android:elevation="30dp"
+                    android:fontFamily="@font/overlock_bold"
+                    android:text="Furniture"
+                    android:textColor="#fcbf49"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="115dp"
+                    android:background="#46212738"
+                    android:elevation="30dp"
+                    android:fontFamily="@font/overlock_bold"
+                    android:text="Let's create a HABITAT for HUMANITY"
+                    android:textColor="#ffffff"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
 
             </androidx.cardview.widget.CardView>
 
@@ -168,6 +247,32 @@
                     app:srcCompat="@drawable/electronics"
                     tools:visibility="visible" />
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="80dp"
+                    android:background="#46212738"
+                    android:elevation="40dp"
+                    android:fontFamily="@font/overlock_bold"
+                    android:text="Electronics"
+                    android:textColor="#fcbf49"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="115dp"
+                    android:background="#46212738"
+                    android:elevation="30dp"
+                    android:fontFamily="@font/overlock_bold"
+                    android:text="Your extra is someone's NEED"
+                    android:textColor="#ffffff"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
@@ -197,6 +302,32 @@
                     android:visibility="visible"
                     app:srcCompat="@drawable/grains"
                     tools:visibility="visible" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="80dp"
+                    android:background="#46212738"
+                    android:elevation="40dp"
+                    android:fontFamily="@font/overlock_bold"
+                    android:text="Grains"
+                    android:textColor="#fcbf49"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="115dp"
+                    android:background="#46212738"
+                    android:elevation="30dp"
+                    android:fontFamily="@font/overlock_bold"
+                    android:text="Got more than needed?DONATE!"
+                    android:textColor="#ffffff"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
 
             </androidx.cardview.widget.CardView>
 
@@ -228,6 +359,32 @@
                     app:srcCompat="@drawable/stationary"
                     tools:visibility="visible" />
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="80dp"
+                    android:background="#46212738"
+                    android:elevation="40dp"
+                    android:fontFamily="@font/overlock_bold"
+                    android:text="Stationary"
+                    android:textColor="#fcbf49"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="115dp"
+                    android:background="#46212738"
+                    android:elevation="30dp"
+                    android:fontFamily="@font/overlock_bold"
+                    android:text="LIGHEST contributions are often HEAVIEST"
+                    android:textColor="#ffffff"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
@@ -257,6 +414,32 @@
                     android:visibility="visible"
                     app:srcCompat="@drawable/utensils"
                     tools:visibility="visible" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="80dp"
+                    android:background="#46212738"
+                    android:elevation="40dp"
+                    android:fontFamily="@font/overlock_bold"
+                    android:text="Utensils"
+                    android:textColor="#fcbf49"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="115dp"
+                    android:background="#46212738"
+                    android:elevation="30dp"
+                    android:fontFamily="@font/overlock_bold"
+                    android:text="It is all about GIVING"
+                    android:textColor="#ffffff"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
 
             </androidx.cardview.widget.CardView>
 
@@ -288,6 +471,32 @@
                     app:srcCompat="@drawable/finance"
                     tools:visibility="visible" />
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="80dp"
+                    android:background="#46212738"
+                    android:elevation="40dp"
+                    android:fontFamily="@font/overlock_bold"
+                    android:text="Financial Aids"
+                    android:textColor="#fcbf49"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="115dp"
+                    android:background="#46212738"
+                    android:elevation="30dp"
+                    android:fontFamily="@font/overlock_bold"
+                    android:text="Build the FUTURE by giving in PRESENT"
+                    android:textColor="#ffffff"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
             </androidx.cardview.widget.CardView>
 
         </LinearLayout>
@@ -299,7 +508,7 @@
         android:layout_height="5dp"
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
-        android:background="#0B1A58"
+        android:background="#f97068"
         app:layout_constraintBottom_toTopOf="@+id/scrollView2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
