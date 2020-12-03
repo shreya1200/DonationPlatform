@@ -102,10 +102,10 @@ public class homepage extends AppCompatActivity {
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                retrieveJson("donated to charity",country,API_KEY);
+                retrieveJson("donate",country,API_KEY);
             }
         });
-        retrieveJson("donated to charity",country,API_KEY);
+        retrieveJson("donate",country,API_KEY);
     }
 
     public void retrieveJson(String query, String country, String apiKey)
@@ -137,7 +137,7 @@ public class homepage extends AppCompatActivity {
 
     public String getCountry(){
 //        Locale locale = Locale.getDefault();
-        String country = "india";
+        String country = "India";
         return country.toLowerCase();
     }
 }

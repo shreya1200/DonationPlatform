@@ -24,15 +24,15 @@
         tools:ignore="MissingConstraints" />
 
     <androidx.viewpager.widget.ViewPager
-        android:layout_width="match_parent"
         android:id="@+id/mViewPager"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:onClick="skip"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/mdotsLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:onClick="skip"
-        app:layout_constraintTop_toTopOf="parent" >
+        app:layout_constraintTop_toTopOf="parent">
 
     </androidx.viewpager.widget.ViewPager>
 
@@ -65,14 +65,17 @@
 
     <Button
         android:id="@+id/finish"
-        android:onClick="finish"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginRight="40dp"
         android:layout_marginBottom="50dp"
         android:background="#ed765e"
+        android:fontFamily="@font/amaranth"
+        android:onClick="finish"
+        android:text="Get Started"
+        android:textAllCaps="false"
         android:textColor="#ffffff"
-        android:text="Start"
+        android:textSize="14sp"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />

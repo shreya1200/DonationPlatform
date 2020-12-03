@@ -14,6 +14,7 @@ import android.location.Location;
 import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.webkit.MimeTypeMap;
 import android.widget.Button;
@@ -106,90 +107,90 @@ public class Register extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
         registerbutton = findViewById(R.id.registerbutton);
         registerbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 assert loc != null;
                 @SuppressLint("MissingPermission") Location location = loc.getLastKnownLocation(LocationManager.PASSIVE_PROVIDER);
-                try{
+                try {
                     assert location != null;
                     loc_lat = location.getLatitude();
                     loc_long = location.getLongitude();
-                } catch(Exception e) {
+                } catch (Exception e) {
                     System.out.println("Error in accessing location: " + e.getMessage());
                     return;
                 }
-                if(password.getText().toString().equals(confirm.getText().toString())){
+                if (password.getText().toString().equals(confirm.getText().toString())) {
                     setContentView(R.layout.loading_screen);
-                    fauth.createUserWithEmailAndPassword(email.getText().toString(),password.getText().toString()).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
+                    fauth.createUserWithEmailAndPassword(email.getText().toString(), password.getText().toString()).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
                         @Override
                         public void onSuccess(AuthResult authResult) {
 
                             FirebaseUser user = authResult.getUser();
-                            if(user != null){
+                            if (user != null) {
                                 StorageReference stref = storageRef.child(Objects.requireNonNull(fauth.getCurrentUser()).getUid() + "_" + System.currentTimeMillis() + "." + getExtension(imageUri));
                                 stref.putFile(imageUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                                     @Override
                                     public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                                        if(taskSnapshot!=null){
+                                        if (taskSnapshot != null) {
                                             Task<Uri> result = taskSnapshot.getStorage().getDownloadUrl();
                                             result.addOnSuccessListener(new OnSuccessListener<Uri>() {
                                                 @Override
                                                 public void onSuccess(Uri uri) {
                                                     profileimg.setImageURI(uri);
                                                     System.out.println("----ImageURL: " + uri.toString());
-                                                    LinkedHashMap<String,Object> map = new LinkedHashMap<>();
+                                                    LinkedHashMap<String, Object> map = new LinkedHashMap<>();
                                                     map.put("uid", Objects.requireNonNull(fauth.getCurrentUser()).getUid());
-                                                    map.put("name",name.getText().toString());
-                                                    map.put("email",email.getText().toString());
-                                                    map.put("profileImgUrl",uri.toString());
-                                                    map.put("phone","+91"+number.getText().toString());
-                                                    map.put("loc_lat",loc_lat);
-                                                    map.put("loc_long",loc_long);
+                                                    map.put("name", name.getText().toString());
+                                                    map.put("email", email.getText().toString());
+                                                    map.put("profileImgUrl", uri.toString());
+                                                    map.put("phone", "+91" + number.getText().toString());
+                                                    map.put("loc_lat", loc_lat);
+                                                    map.put("loc_long", loc_long);
                                                     DocumentReference docref = fstore.collection("users").document(fauth.getCurrentUser().getUid());
                                                     docref.set(map).addOnSuccessListener(new OnSuccessListener<Void>() {
                                                         @Override
                                                         public void onSuccess(Void aVoid) {
                                                             System.out.println("User created successfully!");
-                                                            startActivity(new Intent(Register.this,homepage.class));
+                                                            startActivity(new Intent(Register.this, LoginActivity.class));
                                                             //startActivity(new Intent(Register.this,homepage.class));
                                                         }
                                                     })
-                                                    .addOnFailureListener(new OnFailureListener() {
-                                                        @Override
-                                                        public void onFailure(@NonNull Exception e) {
-                                                            setContentView(R.layout.activity_register);
-                                                            FirebaseUser user = fauth.getCurrentUser();
-                                                            user.delete();
-                                                            System.out.println("Failed to create user");
-                                                        }
-                                                    });
+                                                            .addOnFailureListener(new OnFailureListener() {
+                                                                @Override
+                                                                public void onFailure(@NonNull Exception e) {
+                                                                    setContentView(R.layout.activity_register);
+                                                                    FirebaseUser user = fauth.getCurrentUser();
+                                                                    user.delete();
+                                                                    System.out.println("Failed to create user");
+                                                                }
+                                                            });
                                                 }
                                             });
                                         }
 
                                         System.out.print("Image upload complete");
-                                        Toast.makeText(Register.this,"Image upload complete",Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(Register.this, "Image upload complete", Toast.LENGTH_SHORT).show();
                                     }
                                 })
-                                .addOnFailureListener(new OnFailureListener() {
-                                    @Override
-                                    public void onFailure(@NonNull Exception e) {
-                                        setContentView(R.layout.activity_register);
-                                        FirebaseUser user = fauth.getCurrentUser();
-                                        user.delete();
-                                        System.out.print("Image upload failed");
-                                        System.out.println(e.getMessage());
-                                        System.out.println(e.getStackTrace());
-                                        Toast.makeText(Register.this,"Image upload failed",Toast.LENGTH_SHORT).show();
-                                    }
-                                });
+                                        .addOnFailureListener(new OnFailureListener() {
+                                            @Override
+                                            public void onFailure(@NonNull Exception e) {
+                                                setContentView(R.layout.activity_register);
+                                                FirebaseUser user = fauth.getCurrentUser();
+                                                user.delete();
+                                                System.out.print("Image upload failed");
+                                                System.out.println(e.getMessage());
+                                                System.out.println(e.getStackTrace());
+                                                Toast.makeText(Register.this, "Image upload failed", Toast.LENGTH_SHORT).show();
+                                            }
+                                        });
                             }
                         }
                     });
                 }
-
             }
         });
     }

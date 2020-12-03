@@ -139,12 +139,29 @@ public class UploadDonation extends AppCompatActivity {
     }
 
     private void uploadFile(){
-        if(ImageUri!=null){
+        System.out.println("ImageUri"+ImageUri);
+        System.out.println("upload.getName()"+productName.getText().toString());
+        System.out.println("productDescription.getText().toString()"+productDescription.getText().toString());
+        System.out.println("categories.getSelectedItem().toString()"+categories.getSelectedItem().toString());
+        if(ImageUri==null || productName.getText().toString().equals("")||productDescription.getText().toString().equals("")||categories.getSelectedItem().toString().equals("--Select Category--")) {
+            if (ImageUri == null) {
+                Toast.makeText(UploadDonation.this, "Upload Photo", Toast.LENGTH_SHORT).show();
+            }
+            if(productName.getText().toString().equals("")){
+                productName.setError("Product Name Required");
+            }
+            if(productDescription.getText().toString().equals("")){
+                productDescription.setError("Product Description Required");
+            }
+            if(categories.getSelectedItem().toString().equals("--Select Category--")){
+                Toast.makeText(UploadDonation.this,"Category Required",Toast.LENGTH_SHORT).show();
+            }
+        }else{
+//        if(ImageUri!=null && !(productName.getText().toString().equals(""))&&!(productDescription.getText().toString().equals(""))&&!(categories.getSelectedItem().toString().equals("--Select Category--"))){
             StorageReference fileReferece = storageRef.child(System.currentTimeMillis()+"."+getFileExtension(ImageUri));
             fileReferece.putFile(ImageUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                 @Override
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                    Toast.makeText(UploadDonation.this,"Upload Successful",Toast.LENGTH_LONG).show();
                     if (taskSnapshot.getMetadata() != null) {
                         if (taskSnapshot.getMetadata().getReference() != null) {
                             Task<Uri> result = taskSnapshot.getStorage().getDownloadUrl();
@@ -158,31 +175,30 @@ public class UploadDonation extends AppCompatActivity {
 //                    upload = new Upload(productName.getText().toString().trim(), imageUrl);
 //                    Objects.requireNonNull(Objects.requireNonNull(taskSnapshot.getMetadata()).getReference()).getDownloadUrl().toString()
                                     if(fauth.getCurrentUser() != null) {
-                                        String donation_id=fauth.getCurrentUser().getUid()+System.currentTimeMillis();
+                                        String donation_id = fauth.getCurrentUser().getUid() + System.currentTimeMillis();
 //                    uploadImage();
-                                        Map<String, Object> donation = new HashMap<>();
-                                        donation.put("uid", fauth.getCurrentUser().getUid());
+                                            Map<String, Object> donation = new HashMap<>();
+                                            donation.put("uid", fauth.getCurrentUser().getUid());
 //                        donation.put("email", fauth.getCurrentUser().getEmail());
-                                        donation.put("name",user_name);
-                                        donation.put("categories", categories.getSelectedItem().toString());
-                                        donation.put("product_description", productDescription.getText().toString());
-                                        donation.put("imageurl",upload.getImageUrl());
-                                        donation.put("product_name",upload.getName());
-                                        donation.put("donated",0);
-                                        donation.put("donation_id",donation_id);
-                                        DocumentReference donationtbl = fstore.collection("donations").document(donation_id);
-                                        donationtbl.set(donation).addOnSuccessListener(new OnSuccessListener<Void>() {
-                                            @Override
-                                            public void onSuccess(Void aVoid) {
-                                                System.out.println("Data added successfully");
-                                                Intent intent=new Intent(UploadDonation.this,certificate.class);
-                                                intent.putExtra("Category",categories.getSelectedItem().toString());
-                                                startActivity(intent);
-                                            }
-                                        });
+                                            donation.put("name", user_name);
+                                            donation.put("categories", categories.getSelectedItem().toString());
+                                            donation.put("product_description", productDescription.getText().toString());
+                                            donation.put("imageurl", upload.getImageUrl());
+                                            donation.put("product_name", upload.getName());
+                                            donation.put("donated", 0);
+                                            donation.put("donation_id", donation_id);
+                                            DocumentReference donationtbl = fstore.collection("donations").document(donation_id);
+                                            donationtbl.set(donation).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                                @Override
+                                                public void onSuccess(Void aVoid) {
+                                                    Toast.makeText(UploadDonation.this,"Data Added Successfully",Toast.LENGTH_SHORT).show();
+                                                    Intent intent = new Intent(UploadDonation.this, certificate.class);
+                                                    intent.putExtra("Category", categories.getSelectedItem().toString());
+                                                    startActivity(intent);
+                                                }
+                                            });
+                                        }
                                     }
-
-                                }
                             });
                         }
                     }
@@ -200,9 +216,10 @@ public class UploadDonation extends AppCompatActivity {
                     double progress = (100.0 * snapshot.getBytesTransferred() / snapshot.getTotalByteCount());
                 }
             });
-        }else{
-            Toast.makeText(UploadDonation.this,"No file selected",Toast.LENGTH_SHORT).show();
         }
+//        else{
+//            Toast.makeText(UploadDonation.this,"Missing Information",Toast.LENGTH_SHORT).show();
+//        }
     }
 
 //    // UploadImage method
