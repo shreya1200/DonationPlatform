@@ -57,7 +57,8 @@
                 android:layout_height="140dp"
                 android:layout_centerInParent="true"
                 android:layout_marginTop="5dp"
-                android:background="@drawable/ic_userr" />
+                android:background="@drawable/user"
+                android:scaleType="centerCrop" />
 
             <ImageButton
                 android:id="@+id/uploadphoto"
@@ -116,7 +117,7 @@
                 android:layout_height="wrap_content" />
 
             <EditText
-                android:id="@+id/username"
+                android:id="@+id/emailid"
                 android:layout_width="315dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
@@ -143,7 +144,7 @@
                 android:textSize="14sp" />
 
             <EditText
-                android:id="@+id/confirmpassword"
+                android:id="@+id/confirm"
                 android:layout_width="315dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"

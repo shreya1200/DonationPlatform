@@ -34,10 +34,12 @@
         android:text="Let's make a difference"
         android:textSize="14sp" />
 
-
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="460dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:background="@drawable/backtexture"
 
@@ -106,12 +108,14 @@
             android:layout_centerHorizontal="true"
             android:textColor="#ffffff"
             android:layout_marginTop="10dp"
+            android:layout_marginBottom="30dp"
             android:textAlignment="center"
             android:background="#fe9c8f"
-            android:text=" Make a Donation " />
+            android:text=" Make a Donation "/>
 
 
     </RelativeLayout>
+    </ScrollView>
 
 
 

@@ -14,7 +14,6 @@ import android.location.Location;
 import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.webkit.MimeTypeMap;
 import android.widget.Button;
@@ -35,6 +34,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+import com.squareup.picasso.Picasso;
 
 import java.util.LinkedHashMap;
 import java.util.Objects;
@@ -46,7 +46,7 @@ public class Register extends AppCompatActivity {
     TextView textforlogin;
     //for profile image upload
     ImageButton uploadphoto;
-    ImageView profileimg;
+    ImageView profileimg1;
     Uri imageUri;
     FirebaseStorage storage;
     StorageReference storageRef;
@@ -62,38 +62,42 @@ public class Register extends AppCompatActivity {
         super.onActivityResult(requestCode,resultCode,data);
         if(requestCode==1 && resultCode==RESULT_OK && data!=null){
             imageUri = data.getData();
-            profileimg.setImageURI(data.getData());
-        }
+                System.out.println("lllllllllllllllllllll" + imageUri.toString());
+                Picasso.with(Register.this).load(imageUri).into(profileimg1);
+            }
+//            profileimg1.setImageURI(data.getData());
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+        System.out.println("ffffffffffffffffff"+imageUri);
         context = this.context;
         exists = false;
 
         fauth = FirebaseAuth.getInstance();
         textforlogin = findViewById(R.id.textforlogin);
-        email = findViewById(R.id.email);
+        email = findViewById(R.id.emailid);
         password = findViewById(R.id.password);
-        confirm = findViewById(R.id.confirmpassword);
+        confirm = findViewById(R.id.confirm);
         name = findViewById(R.id.name);
         number = findViewById(R.id.number);
 
         //for profile image
-        profileimg = findViewById(R.id.productImg);
+        profileimg1 = findViewById(R.id.profileimg);
         uploadphoto=findViewById(R.id.uploadphoto);
         storage = FirebaseStorage.getInstance();
         storageRef = storage.getReference("profile_images/");
-        loc = (LocationManager) getSystemService(Context.LOCATION_SERVICE);;
+        loc = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+
         uploadphoto.setOnClickListener(new View.OnClickListener() {
                @Override
                public void onClick(View v) {
                    Intent intent = new Intent();
                    intent.setType("image/*");
                    intent.setAction(Intent.ACTION_GET_CONTENT);
-                   startActivityForResult(intent,1);
+                   startActivityForResult(intent,PICK_IMAGE_REQUEST);
                }
         });
 
@@ -112,89 +116,124 @@ public class Register extends AppCompatActivity {
         registerbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                assert loc != null;
-                @SuppressLint("MissingPermission") Location location = loc.getLastKnownLocation(LocationManager.PASSIVE_PROVIDER);
-                try {
-                    assert location != null;
-                    loc_lat = location.getLatitude();
-                    loc_long = location.getLongitude();
-                } catch (Exception e) {
-                    System.out.println("Error in accessing location: " + e.getMessage());
-                    return;
-                }
-                if (password.getText().toString().equals(confirm.getText().toString())) {
-                    setContentView(R.layout.loading_screen);
-                    fauth.createUserWithEmailAndPassword(email.getText().toString(), password.getText().toString()).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
-                        @Override
-                        public void onSuccess(AuthResult authResult) {
+//                System.out.println("name.getText().toString()"+name.getText().toString());
+//                System.out.println("email.getText().toString()"+email);
+//                System.out.println("number.getText().toString()"+number.getText().toString());
+                if (name.getText().toString().equals("") || number.getText().toString().equals("") || email.getText().toString().equals("") || password.getText().toString().equals("") || confirm.getText().toString().equals("")||!(isValid(email.getText().toString()))) {
+                    if (name.getText().toString().equals("")) {
+                        name.setError("Name Required");
+                    }
+                    if (email.getText().toString().equals("")) {
+                        email.setError("Email Required");
+                    }
+                    if (number.getText().toString().equals("")) {
+                        number.setError("Phone No. Required");
+                    }
+                    if (password.getText().toString().equals("")) {
+                        password.setError("Password Required");
+                    }
+                    if (confirm.getText().toString().equals("")) {
+                        confirm.setError("Confirm Password");
+                    }
+                    if(!(isValid(email.getText().toString()))){
+                        email.setError("Enter Valid Email");
+                    }
 
-                            FirebaseUser user = authResult.getUser();
-                            if (user != null) {
-                                StorageReference stref = storageRef.child(Objects.requireNonNull(fauth.getCurrentUser()).getUid() + "_" + System.currentTimeMillis() + "." + getExtension(imageUri));
-                                stref.putFile(imageUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-                                    @Override
-                                    public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                                        if (taskSnapshot != null) {
-                                            Task<Uri> result = taskSnapshot.getStorage().getDownloadUrl();
-                                            result.addOnSuccessListener(new OnSuccessListener<Uri>() {
+                } else {
+
+                    assert loc != null;
+                    @SuppressLint("MissingPermission") Location location = loc.getLastKnownLocation(LocationManager.PASSIVE_PROVIDER);
+                    try {
+                        assert location != null;
+                        loc_lat = location.getLatitude();
+                        loc_long = location.getLongitude();
+                    } catch (Exception e) {
+                        System.out.println("Error in accessing location: " + e.getMessage());
+                        return;
+                    }
+                    if (password.getText().toString().equals(confirm.getText().toString())) {
+                        setContentView(R.layout.loading_screen);
+                        fauth.createUserWithEmailAndPassword(email.getText().toString(), password.getText().toString()).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
+                            @Override
+                            public void onSuccess(AuthResult authResult) {
+
+                                FirebaseUser user = authResult.getUser();
+                                if (user != null) {
+                                    System.out.println("jjjjjjjjjjjjjjjjjjjjjjjjxxxxxxxxxxxxx"+imageUri);
+                                    if(imageUri==null){
+                                        imageUri=Uri.parse(ContentResolver.SCHEME_ANDROID_RESOURCE+"://"+getResources().getResourcePackageName(R.drawable.user)+'/'+getResources().getResourceTypeName(R.drawable.user)+'/'+getResources().getResourceEntryName(R.drawable.user));
+                                        System.out.println("ttttttttttttxxxxxxxxxxxxx"+imageUri);
+                                    }
+                                    StorageReference stref = storageRef.child(Objects.requireNonNull(fauth.getCurrentUser()).getUid() + "_" + System.currentTimeMillis() + "." + getExtension(imageUri));
+                                    stref.putFile(imageUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                                        @Override
+                                        public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                                            if (taskSnapshot != null) {
+                                                Task<Uri> result = taskSnapshot.getStorage().getDownloadUrl();
+                                                result.addOnSuccessListener(new OnSuccessListener<Uri>() {
+                                                    @Override
+                                                    public void onSuccess(Uri uri) {
+                                                        profileimg1.setImageURI(uri);
+                                                        System.out.println("----ImageURL: " + uri.toString());
+                                                        LinkedHashMap<String, Object> map = new LinkedHashMap<>();
+                                                        map.put("uid", Objects.requireNonNull(fauth.getCurrentUser()).getUid());
+                                                        map.put("name", name.getText().toString());
+                                                        map.put("email", email.getText().toString());
+                                                        map.put("profileImgUrl", uri.toString());
+                                                        map.put("phone", "+91" + number.getText().toString());
+                                                        map.put("loc_lat", loc_lat);
+                                                        map.put("loc_long", loc_long);
+                                                        DocumentReference docref = fstore.collection("users").document(fauth.getCurrentUser().getUid());
+                                                        docref.set(map).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                                            @Override
+                                                            public void onSuccess(Void aVoid) {
+                                                                System.out.println("User created successfully!");
+                                                                startActivity(new Intent(Register.this, LoginActivity.class));
+                                                                //startActivity(new Intent(Register.this,homepage.class));
+                                                            }
+                                                        })
+                                                                .addOnFailureListener(new OnFailureListener() {
+                                                                    @Override
+                                                                    public void onFailure(@NonNull Exception e) {
+                                                                        setContentView(R.layout.activity_register);
+                                                                        FirebaseUser user = fauth.getCurrentUser();
+                                                                        user.delete();
+                                                                        System.out.println("Failed to create user");
+                                                                    }
+                                                                });
+                                                    }
+                                                });
+                                            }
+
+                                            System.out.print("Image upload complete");
+                                            Toast.makeText(Register.this, "Image upload complete", Toast.LENGTH_SHORT).show();
+                                        }
+                                    })
+                                            .addOnFailureListener(new OnFailureListener() {
                                                 @Override
-                                                public void onSuccess(Uri uri) {
-                                                    profileimg.setImageURI(uri);
-                                                    System.out.println("----ImageURL: " + uri.toString());
-                                                    LinkedHashMap<String, Object> map = new LinkedHashMap<>();
-                                                    map.put("uid", Objects.requireNonNull(fauth.getCurrentUser()).getUid());
-                                                    map.put("name", name.getText().toString());
-                                                    map.put("email", email.getText().toString());
-                                                    map.put("profileImgUrl", uri.toString());
-                                                    map.put("phone", "+91" + number.getText().toString());
-                                                    map.put("loc_lat", loc_lat);
-                                                    map.put("loc_long", loc_long);
-                                                    DocumentReference docref = fstore.collection("users").document(fauth.getCurrentUser().getUid());
-                                                    docref.set(map).addOnSuccessListener(new OnSuccessListener<Void>() {
-                                                        @Override
-                                                        public void onSuccess(Void aVoid) {
-                                                            System.out.println("User created successfully!");
-                                                            startActivity(new Intent(Register.this, LoginActivity.class));
-                                                            //startActivity(new Intent(Register.this,homepage.class));
-                                                        }
-                                                    })
-                                                            .addOnFailureListener(new OnFailureListener() {
-                                                                @Override
-                                                                public void onFailure(@NonNull Exception e) {
-                                                                    setContentView(R.layout.activity_register);
-                                                                    FirebaseUser user = fauth.getCurrentUser();
-                                                                    user.delete();
-                                                                    System.out.println("Failed to create user");
-                                                                }
-                                                            });
+                                                public void onFailure(@NonNull Exception e) {
+                                                    setContentView(R.layout.activity_register);
+                                                    FirebaseUser user = fauth.getCurrentUser();
+                                                    user.delete();
+                                                    System.out.print("Image upload failed");
+                                                    System.out.println(e.getMessage());
+                                                    System.out.println(e.getStackTrace());
+                                                    Toast.makeText(Register.this, "Image upload failed", Toast.LENGTH_SHORT).show();
                                                 }
                                             });
-                                        }
-
-                                        System.out.print("Image upload complete");
-                                        Toast.makeText(Register.this, "Image upload complete", Toast.LENGTH_SHORT).show();
-                                    }
-                                })
-                                        .addOnFailureListener(new OnFailureListener() {
-                                            @Override
-                                            public void onFailure(@NonNull Exception e) {
-                                                setContentView(R.layout.activity_register);
-                                                FirebaseUser user = fauth.getCurrentUser();
-                                                user.delete();
-                                                System.out.print("Image upload failed");
-                                                System.out.println(e.getMessage());
-                                                System.out.println(e.getStackTrace());
-                                                Toast.makeText(Register.this, "Image upload failed", Toast.LENGTH_SHORT).show();
-                                            }
-                                        });
+                                }
                             }
-                        }
-                    });
+                        });
+                    }
                 }
             }
         });
     }
 
+    private boolean isValid(String email) {
+        String regex = "^[\\w-_\\.+]*[\\w-_\\.]\\@([\\w]+\\.)+[\\w]+[\\w]$";
+        return email.matches(regex);
+    }
     private String getExtension(Uri imageUri) {
         ContentResolver cR = getContentResolver();
         MimeTypeMap mime = MimeTypeMap.getSingleton();
@@ -204,3 +243,9 @@ public class Register extends AppCompatActivity {
 }
 
 //    DocumentReference docref = fstore.collection("users").document("user_details").collection("all_users").document(fauth.getCurrentUser().getUid());
+
+//if(imageUri==null){
+//        imageUri=Uri.parse(ContentResolver.SCHEME_ANDROID_RESOURCE+"://"+getResources().getResourcePackageName(R.drawable.ic_userr)+'/'+getResources().getResourceTypeName(R.drawable.ic_userr)+'/'+getResources().getResourceEntryName(R.drawable.ic_userr));
+//        System.out.println("lllllllllllllllllllll" + imageUri.toString());
+//        Picasso.with(Register.this).load(imageUri).into(profileimg1);
+//        }else {

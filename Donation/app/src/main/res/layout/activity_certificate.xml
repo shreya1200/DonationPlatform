@@ -85,7 +85,7 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="20dp"
                 android:fontFamily="@font/overlock_bold"
-                android:text="We  believe that Giving is not just about making a donation but it is also about making a difference, and even the smallest of your contribution is going to bring happiness to a lot of people's lives. Keep donating , spread Happiness and heep supporting us in creating a better world!!"
+                android:text="We believe that Giving is not just about making a donation but it is also about making a difference, and even the smallest of your contributions is going to bring happiness to a lot of people's lives. Keep donating, spread Happiness and keep supporting us in creating a better world!!"
                 android:textAlignment="center"
                 android:textColor="#D53C1D21"
                 android:textSize="18sp" />
