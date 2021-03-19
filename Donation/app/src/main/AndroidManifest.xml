@@ -23,6 +23,7 @@
         <activity android:name=".PasswordReset"
             android:screenOrientation="portrait"/>
         <activity android:name=".Register"
+            android:windowSoftInputMode="adjustPan"
             android:screenOrientation="portrait"/>
         <activity android:name=".UploadDonation"
             android:screenOrientation="portrait"/>

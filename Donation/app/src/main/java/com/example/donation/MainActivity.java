@@ -1,8 +1,11 @@
 package com.example.donation;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -13,6 +16,16 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.AuthCredential;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.EmailAuthProvider;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserInfo;
+
+import java.security.AuthProvider;
 import java.util.Timer;//transition from one activity to another after a specific interval of time
 import java.util.TimerTask;
 
@@ -26,13 +39,24 @@ public class MainActivity extends AppCompatActivity {
     ImageView logoimg;
     ImageView name;
     TextView slogan;
+    FirebaseAuth fauth;
+
+    void newUser(){
+        Intent intent = new Intent(MainActivity.this, Onboarding.class);
+        startActivity(intent);
+    }
+
+    void alreadyLoggedIn(){
+        Intent intent = new Intent(MainActivity.this, profile.class);
+        startActivity(intent);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
-
+        fauth = FirebaseAuth.getInstance();
         //animations
 
         topAnim = AnimationUtils.loadAnimation(this, R.anim.top_animation);
@@ -52,38 +76,15 @@ public class MainActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(MainActivity.this, Onboarding.class);
-                startActivity(intent);
+                FirebaseUser user = fauth.getCurrentUser();
+                if(user!=null){
+                    System.out.println("xxxxxxxxxxxxxxxxxx : "+user.getUid());
+                    alreadyLoggedIn();
+                }else{
+                    newUser();
+                }
                 finish();
-
-                //  Pair[] pairs =new Pair[2];
-                // pairs[0] = new Pair<View,String>(logoimg,"logo_image");
-                //pairs[1] = new Pair<View,String>(name,"logo_text");
-
-                //if(Build.VERSION.SDK_INT>= Build.VERSION_CODES.LOLLIPOP) {
-                //  ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(IntroPage.this, pairs);
-                // startActivity(intent,options.toBundle());  //options .bundle will carrry our animation
             }
 
         }, SPLASH_SCREEN);
     }}
-//    Timer timer;
-//    @Override
-//    protected void onCreate(Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_main);
-//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-//            Window w = getWindow();
-//            w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
-//        }
-//
-//        timer = new Timer();
-//        timer.schedule(new TimerTask() {
-//            @Override
-//            public void run() {
-//                Intent intent = new Intent(MainActivity.this,homepage.class);
-//                startActivity(intent);
-//                finish();
-//            }
-//        }, 1000);
-//    }

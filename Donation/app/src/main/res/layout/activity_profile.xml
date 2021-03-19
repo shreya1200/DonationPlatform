@@ -49,8 +49,8 @@
 
             <ImageView
                 android:id="@+id/productImg"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
 
                 android:layout_alignWithParentIfMissing="true"
                 android:layout_below="@id/logo"
@@ -75,38 +75,35 @@
                 android:fontFamily="@font/acme"
 
                 android:includeFontPadding="false"
-                android:text="Apoorva Patil"
                 android:textColor="#f97068"
                 android:textSize="20sp" />
 
             <TextView
 
-                android:layout_width="wrap_content"
                 android:id="@+id/emailtxt"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/nametxt"
                 android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
                 android:layout_toRightOf="@id/productImg"
                 android:fontFamily="@font/overlock_bold"
                 android:includeFontPadding="false"
-                android:text="patilapoorva216@gmail.com"
                 android:textColor="#536878"
-                android:textSize="14sp"
-                android:layout_marginTop="5dp"/>
+                android:textSize="14sp" />
 
             <TextView
+                android:id="@+id/contacttxt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/contacttxt"
                 android:layout_below="@+id/emailtxt"
                 android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
                 android:layout_toRightOf="@id/productImg"
                 android:fontFamily="@font/overlock_bold"
                 android:includeFontPadding="false"
-                android:text="98465783"
                 android:textColor="#536878"
-                android:textSize="14sp"
-                android:layout_marginTop="5dp"/>
+                android:textSize="14sp" />
 
 
 

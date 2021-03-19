@@ -72,7 +72,6 @@ public class Register extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-        System.out.println("ffffffffffffffffff"+imageUri);
         context = this.context;
         exists = false;
 
@@ -119,7 +118,7 @@ public class Register extends AppCompatActivity {
 //                System.out.println("name.getText().toString()"+name.getText().toString());
 //                System.out.println("email.getText().toString()"+email);
 //                System.out.println("number.getText().toString()"+number.getText().toString());
-                if (name.getText().toString().equals("") || number.getText().toString().equals("") || email.getText().toString().equals("") || password.getText().toString().equals("") || confirm.getText().toString().equals("")||!(isValid(email.getText().toString()))) {
+                if (name.getText().toString().equals("") || number.getText().toString().equals("") || email.getText().toString().equals("") || password.getText().toString().equals("") || confirm.getText().toString().equals("") || !(isValid(email.getText().toString())) || password.getText().toString().length()<6 || !(password.getText().toString().equals(confirm.getText().toString()))) {
                     if (name.getText().toString().equals("")) {
                         name.setError("Name Required");
                     }
@@ -138,18 +137,25 @@ public class Register extends AppCompatActivity {
                     if(!(isValid(email.getText().toString()))){
                         email.setError("Enter Valid Email");
                     }
+                    if(password.getText().toString().length()<6){
+                        password.setError("Atleast 6 characters required");
+                        password.setText("");
+                        confirm.setText("");
+                    }
+                    if(!(password.getText().toString().equals(confirm.getText().toString()))){
+                        confirm.setError("Must match with password");
+                    }
 
                 } else {
 
-                    assert loc != null;
                     @SuppressLint("MissingPermission") Location location = loc.getLastKnownLocation(LocationManager.PASSIVE_PROVIDER);
                     try {
-                        assert location != null;
                         loc_lat = location.getLatitude();
                         loc_long = location.getLongitude();
                     } catch (Exception e) {
+                        loc_lat = 0;
+                        loc_long = 0;
                         System.out.println("Error in accessing location: " + e.getMessage());
-                        return;
                     }
                     if (password.getText().toString().equals(confirm.getText().toString())) {
                         setContentView(R.layout.loading_screen);
